@@ -12,6 +12,33 @@ const connection = mysql.createConnection({
 });
 connection.connect((err) => err && console.log(err));
 
+// Route to get songs from a specific artist
+// GET /songs/:artist
+const songs_by_artist = async function(req, res) {
+  
+  const artist = req.params.artist;
+  connection.query(`
+    SELECT *
+    FROM Songs
+    WHERE artist = '${artist}'
+    LIMIT 5
+  `, (err, data) => {
+    if (err || data.length === 0) {
+      // if there is an error for some reason, or if the query is empty (this should not be possible)
+      // print the error message and return an empty object instead
+      console.log(err);
+      res.json({});
+    } else {
+      // Here, we return results of the query as an object, keeping only relevant data
+      // being song_id and title which you will add. In this case, there is only one song
+      // so we just directly access the first element of the query results array (data)
+      // TODO (TASK 3): also return the song title in the response
+      res.json(data);
+    }
+  });
+}
+
+
 /******************
  * WARM UP ROUTES *
  ******************/
@@ -297,4 +324,5 @@ module.exports = {
   top_songs,
   top_albums,
   search_songs,
+  songs_by_artist
 }

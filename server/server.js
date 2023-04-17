@@ -8,6 +8,8 @@ app.use(cors({
   origin: '*',
 }));
 
+
+app.get('/songs_by_artist/:artist', routes.songs_by_artist);
 // We use express to define our various API endpoints and
 // provide their handlers that we implemented in routes.js
 app.get('/author/:type', routes.author);

@@ -1,9 +1,9 @@
 {
-  "rds_host": "database-1.cefhn4xzqxgw.us-east-1.rds.amazonaws.com",
+  "rds_host": "songsentiment.c4ien1jpci9z.us-east-1.rds.amazonaws.com",
   "rds_port": "3306",
-  "rds_user": "admin",
-  "rds_password" : "ITnihtttcset12",
-  "rds_db": "SWIFTIFY",
+  "rds_user": "songsentiment",
+  "rds_password" : "Ilovemusic1!",
+  "rds_db": "SONG_DB",
   "server_host": "localhost",
   "server_port":"8080"
 }
