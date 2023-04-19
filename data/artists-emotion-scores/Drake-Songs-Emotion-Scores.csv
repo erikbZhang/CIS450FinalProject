@@ -1,0 +1,266 @@
+song_id,title,artist,anger_score,anticipation_score,disgust_score,fear_score,joy_score,negative_score,positive_score,sadness_score,surprise_score,trust_score
+5173,305 to My City,Drake,10,14,4,3,12,21,31,7,7,17
+5172,Cameras,Drake,10,7,7,6,8,13,27,5,1,17
+5170,With You,Drake,3,6,2,4,5,10,10,5,4,6
+5169,Diplomatic Immunity,Drake,26,28,20,31,22,51,63,25,16,36
+5168,6 Man,Drake,8,13,6,15,10,23,19,12,6,13
+5163,Sacrifices,Drake,29,32,18,29,29,49,68,25,17,33
+5162,Laugh Now Cry Later,Drake,13,9,9,14,10,24,24,14,7,8
+5161,Redemption,Drake,21,17,15,20,13,43,37,21,10,22
+5152,Money in the Grave,Drake,16,15,9,17,17,30,34,19,11,25
+5149,Toosie Slide,Drake,14,6,9,13,7,20,22,7,6,15
+5148,Chicago Freestyle,Drake,11,11,9,11,11,22,25,8,5,16
+5147,The Real Her,Drake,17,17,10,17,15,39,34,16,8,21
+5146,Best I Ever Had,Drake,13,13,10,13,13,29,31,16,6,20
+5143,Company,Drake,18,11,9,11,11,29,26,12,7,12
+5135,Come Thru,Drake,5,8,5,6,2,19,12,7,2,5
+5133,Connect,Drake,16,15,11,11,16,32,33,12,8,20
+5125,Wu-Tang Forever,Drake,13,13,10,13,11,23,23,7,5,12
+5120,Own It,Drake,14,7,7,13,9,18,21,11,6,14
+5109,Girls Love Beyoncé,Drake,13,13,8,17,9,24,26,10,6,11
+5105,Over My Dead Body,Drake,27,22,18,26,16,43,32,28,13,19
+5104,Jungle,Drake,11,9,12,15,6,24,21,8,2,12
+5102,Too Good,Drake,7,12,7,9,9,16,22,10,6,13
+5100,Child’s Play,Drake,16,8,11,15,10,33,24,10,5,12
+5098,Nice For What,Drake,9,6,7,10,7,16,19,8,3,10
+5089,All Me,Drake,27,24,18,32,22,54,59,30,8,29
+5086,"Hold On, We’re Going Home",Drake,3,2,2,4,4,5,5,3,1,3
+5085,One Dance,Drake,5,5,3,4,8,6,17,3,3,10
+5137,Tuscan Leather,Drake,32,25,22,27,20,56,58,27,15,34
+5126,Look What You’ve Done,Drake,29,25,18,26,22,50,46,23,13,40
+5121,I’m Upset,Drake,16,12,11,12,12,22,23,7,4,11
+5112,Shot for Me,Drake,20,12,18,20,12,39,30,21,5,19
+5164,6PM in New York,Drake,38,28,28,42,26,71,60,34,18,32
+5119,Headlines,Drake,19,20,10,23,14,38,31,23,13,20
+5108,The Language,Drake,16,15,12,16,12,31,30,11,9,21
+5095,Pound Cake / Paris Morton Music 2,Drake,36,33,26,35,27,62,62,28,22,41
+5175,No Tellin’,Drake,19,10,9,25,6,33,29,18,5,17
+5171,Weston Road Flows,Drake,22,32,17,27,28,48,57,20,17,38
+5165,Star67,Drake,9,18,7,12,8,27,26,17,5,15
+5156,Hate Sleeping Alone,Drake,18,16,9,11,9,25,27,15,9,15
+5153,9,Drake,11,13,8,16,11,18,23,12,5,17
+5150,Days in the East,Drake,19,12,15,15,7,34,24,14,8,10
+5144,10 Bands,Drake,13,14,12,10,13,15,25,5,7,15
+5142,Emotionless,Drake,18,14,12,18,14,42,36,21,11,22
+5141,5 AM in Toronto,Drake,24,23,23,27,17,48,35,22,18,26
+5136,Feel No Ways,Drake,7,6,3,5,0,10,11,1,0,7
+5131,Free Smoke,Drake,18,23,11,20,10,35,33,17,6,21
+5129,Take Care,Drake,11,13,11,16,12,26,27,19,6,18
+5124,Crew Love,Drake,15,13,12,10,8,21,24,13,3,15
+5115,Nonstop,Drake,25,19,18,26,15,39,41,18,15,19
+5114,Portland,Drake,21,9,13,21,12,35,24,15,7,19
+5111,Too Much,Drake,21,20,14,22,16,36,34,18,10,21
+5110,How Bout Now,Drake,15,10,6,11,8,20,23,14,4,12
+5103,Furthest Thing,Drake,18,18,15,21,14,34,29,13,9,24
+5097,HYFR,Drake,19,17,11,18,14,34,31,22,9,15
+5093,The Motto,Drake,17,18,9,13,13,25,33,6,9,18
+5091,From Time,Drake,32,26,21,23,24,57,54,21,11,31
+5090,Fake Love,Drake,7,4,5,9,3,13,14,6,1,10
+5084,Hotline Bling,Drake,6,5,7,7,5,16,12,6,2,8
+5082,God’s Plan,Drake,10,12,9,14,9,17,19,12,6,9
+5130,The Motion,Drake,8,5,4,7,6,12,15,8,3,5
+5117,Gyalchester,Drake,10,5,6,6,2,19,13,7,1,8
+5174,Preach,Drake,10,11,8,11,9,25,21,8,13,21
+5159,Views,Drake,23,14,13,25,16,38,33,18,6,16
+5157,War,Drake,21,10,10,20,6,37,28,13,4,15
+5127,Do Not Disturb,Drake,22,27,22,24,20,44,54,22,13,34
+5123,Doing It Wrong,Drake,8,6,6,13,3,14,8,7,3,3
+5118,U With Me?,Drake,13,13,7,8,6,22,23,11,4,9
+5116,Controlla,Drake,8,7,6,10,6,17,16,12,3,6
+5113,Legend,Drake,10,10,4,8,8,16,18,4,4,11
+5101,Energy,Drake,11,9,6,11,5,21,19,9,8,12
+5092,0 to 100 / The Catch Up,Drake,23,14,16,22,11,45,45,20,13,22
+5154,Blem,Drake,8,7,6,10,3,16,17,3,2,8
+5099,Passionfruit,Drake,9,9,4,5,6,16,12,7,2,8
+5096,Marvin’s Room,Drake,16,16,12,13,12,27,29,15,9,16
+5138,6 God,Drake,14,8,7,12,5,19,18,8,3,13
+5158,KMT,Drake,19,10,14,14,10,27,19,10,11,7
+5151,Keep the Family Close,Drake,11,14,9,18,12,29,26,10,8,15
+5160,Faithful,Drake,9,10,6,10,7,15,23,9,3,10
+5145,Trophies,Drake,9,7,3,8,7,20,24,6,5,14
+5128,Teenage Fever,Drake,12,9,5,6,7,18,12,7,3,7
+5106,Worst Behavior,Drake,16,15,15,16,12,33,31,14,5,19
+5166,Under Ground Kings,Drake,20,17,16,17,12,30,40,16,9,27
+5167,Mob Ties,Drake,9,8,9,10,6,23,22,12,3,9
+5083,In My Feelings,Drake,13,8,7,9,8,21,26,9,7,15
+5087,Know Yourself,Drake,25,15,17,27,6,44,25,13,13,16
+5122,Fire & Desire,Drake,9,5,4,7,6,16,18,6,5,12
+5094,Started from the Bottom,Drake,8,10,3,11,7,15,18,11,3,14
+5264,Uptown,Drake,29,17,15,23,15,55,32,20,18,15
+5188,30 for 30 Freestyle,Drake,24,30,18,31,16,57,52,19,18,28
+5229,Jodeci Freestyle,Drake,27,29,18,30,23,54,48,25,17,33
+5269,Little Bit,Drake,13,10,9,12,9,24,23,12,7,9
+5268,Show Me a Good Time,Drake,20,15,11,14,10,30,21,14,7,15
+5265,Unforgettable,Drake,24,14,17,22,15,36,38,15,9,16
+5263,Not You Too,Drake,12,11,9,10,9,24,17,12,3,11
+5258,Losses,Drake,21,19,12,17,12,36,35,18,7,21
+5255,Ratchet Happy Birthday,Drake,9,10,4,8,10,14,17,6,5,11
+5251,Summers Over Interlude,Drake,1,4,1,2,5,3,7,1,2,5
+5248,Final Fantasy,Drake,17,14,9,14,14,23,31,11,8,22
+5245,Time Flies,Drake,8,8,4,8,6,10,19,7,3,7
+5244,The Resistance,Drake,20,30,16,26,23,44,43,20,15,29
+5242,November 18th,Drake,16,11,10,16,4,28,19,13,5,12
+5241,Shut It Down,Drake,19,16,14,15,12,40,33,19,8,21
+5240,Successful,Drake,22,27,18,28,23,45,50,20,11,31
+5239,Paris Morton Music,Drake,22,21,15,22,19,36,41,14,6,21
+5234,Fireworks,Drake,26,29,20,24,20,40,49,21,14,26
+5224,Desires,Drake,16,8,13,16,14,32,37,17,6,22
+5223,Omertà,Drake,28,24,18,33,19,67,55,27,11,35
+5221,When to Say When,Drake,25,31,20,30,26,43,54,21,16,40
+5220,Sandra’s Rose,Drake,27,19,17,24,12,51,43,24,10,18
+5219,Can I,Drake,4,4,2,4,4,5,12,4,2,9
+5218,Finesse,Drake,3,3,2,4,2,7,9,4,0,2
+5216,March 14,Drake,17,20,13,19,20,31,45,18,8,32
+5200,Ice Melts,Drake,4,5,4,6,4,9,14,3,1,5
+5191,Make Me Proud,Drake,18,16,15,20,12,33,31,14,7,18
+5189,Good Ones Go (Interlude),Drake,11,9,8,6,6,17,14,4,4,10
+5185,Miss Me,Drake,26,15,20,25,17,40,43,13,10,22
+5183,Jaded,Drake,17,11,11,18,8,30,26,11,6,13
+5179,Practice,Drake,11,9,8,9,8,20,24,9,5,14
+5182,Lord Knows,Drake,25,23,24,34,19,63,56,33,14,28
+5212,Pain 1993,Drake,13,13,8,12,10,25,23,11,9,13
+5190,You & The 6,Drake,25,19,17,22,19,49,43,26,9,31
+5186,4PM in Calabasas,Drake,22,22,20,21,23,46,49,20,10,29
+5180,Used To,Drake,27,19,16,24,15,42,32,16,7,17
+5192,Lose You,Drake,27,26,20,25,17,58,56,25,11,34
+5215,Can’t Take a Joke,Drake,14,5,4,12,6,24,13,8,7,8
+5214,Can’t Have Everything,Drake,20,17,16,22,15,43,39,19,12,30
+5260,Skepta Interlude,Drake,18,9,12,18,9,36,30,14,4,17
+5256,Free Spirit,Drake,17,9,8,15,8,38,26,10,4,16
+5254,Say What’s Real,Drake,28,18,16,29,16,53,42,23,10,25
+5237,Is There More,Drake,17,22,15,20,17,37,42,19,13,28
+5270,Behind Barz,Drake,18,7,13,18,8,37,24,17,6,16
+5267,Demons,Drake,20,11,11,21,10,33,28,19,6,17
+5262,Karaoke,Drake,12,10,8,16,9,21,19,11,8,11
+5257,The Motto (Remix),Drake,20,20,13,15,16,28,36,7,10,21
+5246,After Dark,Drake,13,13,8,14,8,24,29,13,3,12
+5243,Peak,Drake,11,8,10,10,8,20,32,12,6,13
+5232,Up All Night,Drake,14,12,12,19,8,31,27,15,8,15
+5227,Summer Games,Drake,5,10,7,7,10,10,19,6,6,12
+5225,Blue Tint,Drake,10,10,5,12,7,12,16,6,2,8
+5222,Fancy,Drake,20,19,17,17,15,44,39,19,10,22
+5213,We Made It Freestyle,Drake,21,18,16,19,15,38,45,17,8,24
+5211,Survival,Drake,15,18,7,16,10,26,28,14,5,16
+5209,Behind Barz (Link Up TV Freestyle),Drake,21,7,16,20,8,40,24,18,8,16
+5208,4422,Drake,1,1,1,2,1,5,5,1,2,3
+5206,That’s How You Feel,Drake,8,8,8,10,7,23,17,12,5,12
+5205,8 Out of 10,Drake,16,15,10,14,15,22,38,14,10,23
+5204,Light Up,Drake,29,25,20,33,18,60,41,25,14,25
+5201,The Ride,Drake,30,24,23,27,20,48,43,26,13,26
+5194,Madonna,Drake,13,9,6,12,4,20,19,8,2,11
+5203,Club Paradise,Drake,28,22,17,23,20,41,43,20,15,29
+5259,Fear,Drake,20,22,13,23,15,38,43,19,9,26
+5253,Thank Me Now,Drake,23,25,17,23,21,45,58,19,10,24
+5249,9AM in Dallas,Drake,27,33,29,30,27,62,56,24,15,41
+5238,Grammys,Drake,17,21,9,13,12,27,28,10,7,17
+5231,Since Way Back,Drake,15,14,11,14,9,22,22,12,7,14
+5228,Jorja Interlude,Drake,8,7,9,6,3,20,14,12,3,10
+5226,Dreams Money Can Buy,Drake,22,16,14,17,17,39,33,18,8,23
+5210,Talk Up,Drake,16,11,10,13,6,27,24,12,7,15
+5195,Still Here,Drake,7,8,3,6,7,7,22,2,2,9
+5193,Buried Alive Interlude,Drake,21,16,18,17,9,40,26,19,7,13
+5187,Hype,Drake,13,13,8,14,7,28,28,5,6,13
+5177,Draft Day,Drake,18,14,14,20,11,35,29,21,11,16
+5176,Trust Issues,Drake,21,11,12,15,8,31,18,13,10,12
+5230,Wednesday Night Interlude,Drake,7,5,4,5,6,7,12,6,2,6
+5198,We’ll Be Fine,Drake,19,16,13,18,13,29,31,14,5,19
+5197,Over,Drake,19,13,11,15,10,25,22,15,9,15
+5196,Now & Forever,Drake,5,3,4,9,2,13,11,4,1,7
+5233,Madiba Riddim,Drake,5,9,6,12,11,9,20,8,5,10
+5250,Nothings Into Somethings,Drake,4,5,3,2,3,11,8,5,2,6
+5247,Heat of the Moment,Drake,9,5,12,9,4,19,22,6,1,11
+5235,Glow,Drake,12,15,6,14,13,17,27,10,7,18
+5261,Find Your Love,Drake,3,6,1,6,5,9,12,6,3,7
+5236,My Side,Drake,10,9,7,10,3,20,14,8,2,8
+5207,Elevate,Drake,10,7,8,11,6,17,16,9,6,13
+5217,Get It Together,Drake,8,8,3,4,5,9,9,4,3,6
+5181,Pop Style,Drake,8,5,7,8,6,18,17,9,3,12
+5202,No Long Talk,Drake,17,10,10,13,8,33,19,10,8,8
+5379,Empire,Drake,16,19,13,15,14,34,41,10,10,16
+5285,Closer to My Dreams,Drake,25,26,15,27,20,44,55,25,8,31
+5522,Take Your Girl,Drake,12,13,10,14,15,34,26,12,3,18
+5493,Drake’s Voice Mail Box #1,Drake,10,5,6,6,5,15,20,6,2,8
+5486,Forever (Original),Drake,16,10,14,17,9,41,28,19,5,14
+5477,My Love (Demo),Drake,1,5,0,1,3,4,8,1,2,5
+5430,Money (Remix),Drake,13,10,15,16,14,24,34,14,9,17
+5426,About the Game,Drake,14,13,10,18,9,28,29,14,8,15
+5416,Teach U a Lesson (Freestyle),Drake,15,11,15,22,8,38,29,16,4,20
+5406,Underdog,Drake,18,16,8,14,10,30,32,11,12,15
+5400,Video Girl,Drake,23,22,21,30,23,55,56,25,19,34
+5398,"Kick, Push (Remix)",Drake,24,26,18,24,19,55,55,20,13,36
+5397,Thrill Is Gone,Drake,19,17,15,22,14,40,32,18,11,19
+5392,Extra Special,Drake,14,18,12,16,19,27,34,12,8,17
+5385,Come Real,Drake,4,5,4,5,9,11,18,7,3,9
+5381,Must Hate Money,Drake,27,24,21,25,22,41,46,20,10,32
+5377,Asthma Team,Drake,16,17,10,19,14,32,42,18,10,26
+5373,Stunt Hard,Drake,27,19,23,34,15,53,44,25,14,23
+5366,All This Love,Drake,14,11,7,7,13,16,32,7,8,22
+5358,Faded,Drake,13,10,12,15,8,30,27,10,7,11
+5356,Give Ya,Drake,20,18,15,21,13,45,42,17,13,18
+5353,Don’t You Have a Man,Drake,19,12,15,16,13,31,34,14,4,15
+5349,Special,Drake,16,16,16,24,21,39,57,18,4,30
+5348,Bitch Is Crazy,Drake,10,13,6,7,8,16,21,10,4,11
+5345,Missin’ You (Freestyle),Drake,20,11,8,19,8,30,19,15,6,14
+5343,Barry Bonds (Freestyle),Drake,29,18,19,27,17,62,45,20,18,25
+5337,Loving You No More,Drake,19,12,17,23,11,39,25,21,5,16
+5335,Man of the Year,Drake,31,22,16,21,17,49,48,21,8,27
+5320,Best I Ever Had (Remix),Drake,14,18,13,16,17,35,39,16,11,25
+5319,Going in for Life,Drake,24,22,12,22,13,39,45,16,11,31
+5318,The Presentation,Drake,20,19,18,18,17,37,53,14,9,29
+5317,Do It All,Drake,11,14,6,15,10,31,27,14,10,13
+5303,Come Winter,Drake,30,37,20,31,35,62,69,30,17,40
+5302,I’m Ready For You,Drake,15,15,10,18,8,35,26,15,7,12
+5299,Replacement Girl,Drake,15,10,16,17,11,32,30,15,12,19
+5297,A Night Off,Drake,5,9,4,7,4,9,14,7,2,6
+5292,On My Way,Drake,6,11,1,10,10,10,22,5,5,9
+5283,Brand New,Drake,13,6,7,13,6,18,16,9,2,13
+5280,Ignant Shit,Drake,31,32,26,37,23,64,55,28,17,33
+5279,Landed,Drake,11,4,12,8,4,19,21,8,4,8
+5276,I Get Lonely,Drake,6,7,3,6,5,9,13,7,2,10
+5275,I’m Goin In,Drake,16,8,14,16,6,32,27,15,8,12
+5272,From Florida With Love,Drake,12,5,8,8,6,23,17,8,6,8
+5448,Intro (Room For Improvement),Drake,2,6,3,2,5,7,9,2,1,6
+5277,Deep Pockets,Drake,16,15,9,11,10,30,30,14,8,18
+5294,"You Know, You Know",Drake,23,30,16,24,26,36,51,21,11,27
+5526,Acapella,Drake,18,13,11,16,13,30,38,18,7,15
+5498,Drake’s Voice Mail Box #3,Drake,9,6,7,8,7,12,21,3,2,12
+5380,S.T.R.E.S.S.,Drake,24,15,11,20,15,41,44,21,11,26
+5369,The Last Hope,Drake,22,19,12,21,16,39,37,20,11,17
+5355,AM 2 PM,Drake,20,28,14,19,23,45,47,21,15,29
+5336,Think Good Thoughts,Drake,22,17,21,20,13,47,42,26,8,19
+5331,A Scorpio’s Mind,Drake,36,21,22,34,18,54,54,28,18,30
+5312,Comeback Season,Drake,15,14,10,15,11,35,34,14,6,22
+5310,City Is Mine,Drake,18,13,11,16,13,30,38,18,7,15
+5304,Unstoppable,Drake,16,16,14,10,11,32,37,11,10,17
+5295,Let’s Call It Off,Drake,5,11,5,8,4,16,21,5,5,12
+5289,Congratulations,Drake,18,18,9,19,17,38,40,13,14,25
+5274,The Calm,Drake,25,21,19,28,21,49,55,27,12,31
+5273,Bria’s Interlude,Drake,2,4,1,5,2,9,7,6,1,4
+5425,Easy to Please,Drake,16,19,14,22,13,37,33,18,10,18
+5418,Try Harder,Drake,19,20,15,14,13,36,34,20,11,20
+5445,Pianist Hands,Drake,3,5,3,3,5,7,18,5,3,7
+5423,Greatness,Drake,15,9,11,12,12,26,28,12,4,18
+5422,To Feel Things,Drake,7,1,4,8,2,12,9,2,3,4
+5411,Live Up to My Name (Reference),Drake,21,6,9,18,4,33,13,15,4,9
+5271,Houstatlantavegas,Drake,14,17,8,12,11,20,24,14,7,14
+5505,Swagga Like Us,Drake,17,17,13,17,13,30,28,11,8,17
+5443,Share,Drake,8,4,4,8,3,14,7,5,3,4
+5405,Do What You Do,Drake,13,19,7,12,15,29,36,13,10,17
+5305,What If I Kissed You,Drake,5,5,4,4,2,5,10,3,4,8
+5414,Make Things Right,Drake,18,17,15,19,14,35,28,13,20,17
+5393,Faithful (Extended Version),Drake,11,17,9,12,11,24,34,14,6,18
+5464,Intro,Drake,2,1,1,1,1,5,7,2,0,4
+5516,Cannonball (Snippet),Drake,8,10,7,10,7,19,16,6,6,6
+5504,Drake’s Voice Mail Box #2,Drake,4,0,3,2,0,6,4,1,0,4
+5492,I’m Still Fly,Drake,13,17,14,14,11,30,32,14,8,23
+5485,Money to Blow (Snippet),Drake,11,6,8,8,4,23,20,11,4,12
+5419,Do What You Do (Remix),Drake,24,18,17,26,14,49,34,15,6,22
+5502,U.P.A. (Outro),Drake,7,9,9,7,6,18,18,9,3,10
+5293,Cece’s Interlude,Drake,3,4,1,4,3,4,6,4,3,2
+5306,Where to Now,Drake,9,11,10,8,7,24,24,7,3,11
+5286,Lust for Life,Drake,5,11,4,4,6,16,18,5,2,9
+5281,Sooner Than Later,Drake,8,18,8,13,12,18,25,11,7,17
+5395,Not Nice,Drake,3,5,4,6,4,6,10,5,2,5
+5535,Minnesota Excellence,Drake,0,0,1,0,0,1,0,1,0,1
+5342,More Life [Note],Drake,1,4,2,3,3,3,8,2,2,5
+5391,Outro,Drake,0,0,0,0,0,1,1,0,1,1

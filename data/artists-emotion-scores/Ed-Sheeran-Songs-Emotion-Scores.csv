@@ -1,0 +1,126 @@
+song_id,title,artist,anger_score,anticipation_score,disgust_score,fear_score,joy_score,negative_score,positive_score,sadness_score,surprise_score,trust_score
+1989,Sing,Ed Sheeran,13,10,5,12,12,21,25,11,7,13
+1994,Take It Back,Ed Sheeran,25,30,23,29,22,62,54,29,16,35
+2059,"You Need Me, I Don’t Need You (Live at the Bedford)",Ed Sheeran,53,39,34,49,34,104,83,50,21,47
+2029,"You Need Me, I Don’t Need You (Live Ustream Version)",Ed Sheeran,40,35,24,36,26,74,64,42,17,45
+2129,Don’t (Don Diablo Remix),Ed Sheeran,11,21,7,16,18,26,37,18,7,22
+2120,Shape of You (Berywam Remix),Ed Sheeran,10,10,9,8,11,21,27,15,7,14
+2093,Photograph (Felix Jaehn Remix),Ed Sheeran,12,8,5,11,9,17,18,13,5,9
+2040,...Baby One More Time,Ed Sheeran,5,3,3,7,2,11,7,8,1,3
+2037,Don’t (Rick Ross Remix),Ed Sheeran,17,26,11,20,21,34,44,22,10,27
+2024,I Don’t Want Your Money,Ed Sheeran,13,9,11,12,10,19,19,10,6,9
+2019,Feels,Ed Sheeran,13,6,11,11,9,23,21,10,7,10
+2008,Put It All on Me,Ed Sheeran,8,9,4,6,7,11,13,6,4,8
+2002,The Man,Ed Sheeran,25,22,19,32,16,54,48,28,14,25
+2001,All of the Stars,Ed Sheeran,11,8,8,7,5,14,13,9,2,4
+1996,Best Part of Me,Ed Sheeran,9,4,7,12,4,19,15,14,4,7
+1987,I’m a Mess,Ed Sheeran,5,10,5,7,7,18,15,10,3,7
+1985,Hearts Don’t Break Around Here,Ed Sheeran,10,12,6,9,11,17,20,8,9,11
+1980,Cross Me,Ed Sheeran,16,9,7,13,10,23,21,11,8,10
+1975,Barcelona,Ed Sheeran,6,9,5,9,13,16,24,8,7,10
+1971,New Man,Ed Sheeran,15,12,7,11,11,29,23,14,7,14
+1966,South of the Border,Ed Sheeran,11,17,8,12,17,26,34,10,9,19
+1964,Don’t,Ed Sheeran,12,22,9,17,19,28,38,20,7,23
+1963,Photograph,Ed Sheeran,12,7,5,11,9,16,18,13,4,9
+1962,Dive,Ed Sheeran,6,4,6,4,3,11,14,6,2,5
+1961,Galway Girl,Ed Sheeran,10,12,6,8,14,19,24,9,6,14
+1960,Thinking Out Loud,Ed Sheeran,8,7,2,6,13,13,22,10,5,12
+1958,Happier,Ed Sheeran,7,6,4,7,10,9,17,6,6,10
+1956,Perfect,Ed Sheeran,5,14,4,4,16,11,26,5,5,15
+1955,Shape of You,Ed Sheeran,10,10,9,8,11,21,27,15,7,14
+1988,"You Need Me, I Don’t Need You",Ed Sheeran,24,20,13,24,14,46,45,28,9,32
+2125,The City (Live at the Bedford),Ed Sheeran,16,12,10,14,10,27,25,13,5,15
+2114,The A Team (Live at the Bedford),Ed Sheeran,13,12,12,15,12,29,23,16,8,13
+2101,Lego House (Acoustic),Ed Sheeran,7,3,2,8,2,14,14,7,2,4
+2092,The City (Live at Sticky Studios),Ed Sheeran,16,11,10,14,8,27,23,13,5,15
+2091,Candle in the Wind (2018 Version),Ed Sheeran,5,8,6,9,6,11,14,9,1,6
+2090,Be My Husband (Live from Glastonbury),Ed Sheeran,7,5,8,8,6,12,13,9,2,9
+2082,Nightmares,Ed Sheeran,24,16,14,27,13,44,31,25,13,19
+2081,You,Ed Sheeran,13,19,6,13,16,22,33,20,11,18
+2074,"You Need Me, I Don’t Need You (True Tiger Remix)",Ed Sheeran,35,20,25,38,14,63,41,29,9,23
+2068,Goodbye to You,Ed Sheeran,18,26,15,26,22,43,66,27,15,33
+2063,Wake Me Up (Live at the Bedford),Ed Sheeran,18,10,12,14,13,31,33,19,5,16
+2062,Family,Ed Sheeran,24,24,16,28,14,59,37,31,12,23
+2061,Lego House (Gosling Remix),Ed Sheeran,23,16,14,28,11,49,25,24,10,18
+2058,Lately,Ed Sheeran,38,26,24,39,14,71,52,29,10,34
+2049,Firefly,Ed Sheeran,11,3,5,9,5,17,13,8,7,5
+2046,English Rose,Ed Sheeran,4,5,2,3,7,10,18,7,3,9
+2045,One Night,Ed Sheeran,10,7,6,8,7,20,19,9,4,11
+2041,Homeless,Ed Sheeran,11,8,9,14,7,24,17,14,4,11
+2032,The City,Ed Sheeran,11,10,5,8,8,15,17,8,5,13
+2028,"You Need Me, I Don’t Need You (Remix)",Ed Sheeran,20,17,11,17,12,39,37,16,10,19
+2014,Autumn Leaves,Ed Sheeran,7,4,5,5,4,15,13,9,2,4
+2007,Little Lady,Ed Sheeran,38,28,27,43,20,83,61,34,17,32
+2005,Nothing on You,Ed Sheeran,9,9,4,9,4,20,16,9,4,5
+2004,Runaway,Ed Sheeran,7,9,1,8,5,13,14,9,5,12
+2003,Drunk,Ed Sheeran,9,5,6,13,7,18,21,12,2,8
+2000,Wake Me Up,Ed Sheeran,14,8,9,12,10,26,25,16,4,11
+1998,Nina,Ed Sheeran,13,17,12,21,13,28,30,20,9,17
+1995,U.N.I.,Ed Sheeran,10,8,7,16,9,25,22,14,6,10
+1993,Afire Love,Ed Sheeran,12,8,11,13,9,23,21,17,5,12
+1991,One,Ed Sheeran,7,6,4,8,7,11,14,8,3,8
+1990,Take Me Back to London,Ed Sheeran,24,12,19,20,6,41,21,19,7,11
+1983,Lego House,Ed Sheeran,7,3,2,8,2,14,14,7,2,4
+1972,How Would You Feel (Paean),Ed Sheeran,4,9,4,9,7,14,16,8,3,7
+1970,Remember the Name,Ed Sheeran,13,23,12,15,12,39,31,17,7,19
+1965,The A Team,Ed Sheeran,11,9,11,13,7,26,14,14,5,8
+1959,Supermarket Flowers,Ed Sheeran,5,7,6,9,7,15,18,11,4,7
+2035,New York,Ed Sheeran,10,16,10,11,13,20,23,12,9,11
+2016,1000 Nights,Ed Sheeran,16,16,12,16,12,33,28,15,7,14
+1982,Save Myself,Ed Sheeran,12,5,8,14,7,21,21,14,4,12
+2075,Radio,Ed Sheeran,10,9,7,7,8,19,26,6,6,16
+2034,Touch and Go,Ed Sheeran,7,5,4,9,5,13,15,9,4,8
+2022,Shirtsleeves,Ed Sheeran,8,9,8,9,8,17,18,9,4,8
+2006,Even My Dad Does Sometimes,Ed Sheeran,3,5,2,4,3,5,10,5,2,4
+1979,What Do I Know?,Ed Sheeran,12,10,10,13,6,20,24,10,3,10
+1974,Nancy Mulligan,Ed Sheeran,11,8,7,12,10,22,21,9,3,13
+2086,Drown Me Out,Ed Sheeran,16,7,14,21,6,40,27,17,11,15
+2054,So,Ed Sheeran,2,5,2,5,4,8,9,6,2,6
+1967,I See Fire,Ed Sheeran,12,10,14,17,4,25,10,18,6,8
+2150,Give Me Love (New Machine Remix),Ed Sheeran,5,5,4,7,5,6,13,4,4,7
+1984,Bibia Be Ye Ye,Ed Sheeran,9,9,7,7,6,15,16,12,3,9
+1977,Give Me Love,Ed Sheeran,7,5,2,9,3,11,6,7,1,2
+2070,Sing (French Remix),Ed Sheeran,10,9,5,9,9,19,20,10,2,8
+2055,Sofa,Ed Sheeran,13,6,9,13,7,18,15,7,3,8
+2053,Let It Out,Ed Sheeran,3,6,1,5,8,8,12,9,3,7
+2050,Everything You Are,Ed Sheeran,4,7,6,5,9,8,17,8,4,10
+2043,Gold Rush,Ed Sheeran,4,7,2,6,6,10,15,4,1,8
+2026,This,Ed Sheeran,5,6,3,5,5,6,8,6,2,4
+2020,Grade 8,Ed Sheeran,3,5,2,7,5,13,16,7,2,11
+2017,Friends,Ed Sheeran,3,3,2,5,6,5,10,3,2,6
+2012,The Parting Glass,Ed Sheeran,6,10,4,8,9,10,15,7,5,9
+1992,Bloodstream,Ed Sheeran,13,10,7,13,6,19,14,12,4,6
+1978,Kiss Me,Ed Sheeran,7,6,6,10,8,13,14,9,5,7
+1969,Eraser,Ed Sheeran,19,22,15,16,22,40,43,20,8,27
+2039,She,Ed Sheeran,5,8,4,7,4,10,12,6,2,5
+2025,Little Bird,Ed Sheeran,7,5,6,7,7,14,18,10,5,7
+1957,Castle on the Hill,Ed Sheeran,5,13,4,7,10,15,24,9,5,12
+1999,Small Bump,Ed Sheeran,8,4,6,7,4,18,10,9,4,5
+2067,Where We Land,Ed Sheeran,8,6,7,8,6,11,11,7,3,5
+2018,Way to Break My Heart,Ed Sheeran,5,8,2,5,7,8,14,7,5,6
+1986,Tenerife Sea,Ed Sheeran,2,3,3,5,5,12,12,7,2,5
+2071,Fire Alarms,Ed Sheeran,2,1,3,4,1,11,6,3,1,4
+2048,Be Like You,Ed Sheeran,10,10,8,12,9,23,14,12,9,10
+2051,Wayfaring Stranger,Ed Sheeran,4,1,5,4,3,10,7,9,1,3
+2030,Cold Coffee,Ed Sheeran,3,6,2,7,5,14,12,5,4,6
+2023,Sunburn,Ed Sheeran,4,4,3,6,2,10,10,10,3,4
+2010,Make It Rain,Ed Sheeran,5,5,4,6,4,8,18,5,2,11
+1968,Beautiful People,Ed Sheeran,7,6,3,7,6,16,17,8,3,6
+2136,Fall (Live at the Bedford),Ed Sheeran,1,1,1,1,3,3,7,2,1,1
+2056,Fall,Ed Sheeran,1,1,1,1,3,3,7,2,1,1
+2206,Sing (Trippy Turtle Remix),Ed Sheeran,11,9,4,13,12,20,25,12,7,13
+2229,Drunk (Lazy Jay’s Rave-o-Lution Dub),Ed Sheeran,9,5,6,13,7,19,21,13,3,8
+2225,Lego House (Subscape Remix),Ed Sheeran,7,3,2,8,2,14,14,7,2,4
+2223,Lego House (The Prototypes Remix),Ed Sheeran,0,0,0,0,1,0,4,0,1,2
+2215,Drunk (Lazy Jay’s Wasted in London Remix),Ed Sheeran,9,5,6,13,7,18,21,12,2,8
+2199,The A Team (Shy FX’s Ackee and Saltfish Remix),Ed Sheeran,11,9,11,13,7,26,14,14,5,8
+2198,The A Team (True Tiger Remix),Ed Sheeran,9,8,8,9,6,20,12,11,5,6
+2157,Homeless (Live at the Bedford),Ed Sheeran,12,10,10,16,9,26,20,17,4,13
+2203,Sing (Live @ 1Live Radiokonzert),Ed Sheeran,12,9,4,11,12,20,25,12,7,13
+2168,I See Fire - Live and in Session,Ed Sheeran,12,10,14,17,4,25,10,18,6,8
+2226,Drunk (Jayglo Remix),Ed Sheeran,1,1,0,3,2,3,3,1,1,1
+2211,Drunk (Doctor P Remix),Ed Sheeran,5,5,5,10,7,15,18,11,2,6
+2189,Drunk (Rudimental Remix),Ed Sheeran,6,1,5,9,2,11,7,7,1,2
+2184,Grade 8 (Acoustic),Ed Sheeran,3,5,2,7,5,13,16,7,2,11
+2177,The A Team (KOAN Sound Remix),Ed Sheeran,6,4,6,8,3,13,7,9,4,3
+2234,Crazy,Ed Sheeran,0,0,0,0,0,0,1,0,0,0

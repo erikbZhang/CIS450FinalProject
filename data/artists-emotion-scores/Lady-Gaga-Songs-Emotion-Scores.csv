@@ -1,0 +1,185 @@
+song_id,title,artist,anger_score,anticipation_score,disgust_score,fear_score,joy_score,negative_score,positive_score,sadness_score,surprise_score,trust_score
+3034,Fashion (2009),Lady Gaga,4,2,3,3,4,7,9,3,1,5
+3008,Bad Kids,Lady Gaga,23,5,17,18,7,28,19,13,6,10
+3102,We Are Plastic,Lady Gaga,4,6,3,4,5,7,17,6,2,9
+3097,Applause (Demo),Lady Gaga,2,2,1,2,5,2,7,1,4,3
+3088,Fever,Lady Gaga,1,6,1,2,7,3,10,5,3,5
+3087,Fancy Pants,Lady Gaga,5,6,5,6,7,15,12,7,5,5
+3078,Free Woman (Demo),Lady Gaga,5,5,3,6,5,7,9,3,4,5
+3077,Dirty Ice Cream,Lady Gaga,3,8,4,3,10,14,20,5,4,9
+3075,Panty Party,Lady Gaga,6,5,7,7,5,13,10,5,3,6
+3066,Super Bowl LI Halftime Show,Lady Gaga,18,25,16,24,28,45,59,24,12,35
+3062,Reloaded,Lady Gaga,10,8,9,11,6,17,23,7,3,11
+3061,Born This Way (The Country Road Version),Lady Gaga,9,9,6,9,14,16,24,9,4,15
+3057,Glitter and Grease,Lady Gaga,7,8,8,2,10,12,15,4,4,7
+3051,Bang Bang (My Baby Shot Me Down),Lady Gaga,10,4,6,8,5,13,10,7,4,6
+3049,Out of Control,Lady Gaga,5,0,1,5,4,6,10,4,0,3
+3037,Again Again,Lady Gaga,4,6,3,6,6,6,17,4,4,7
+3036,Disco Heaven,Lady Gaga,5,4,3,3,5,10,8,5,3,4
+3030,PARTYNAUSEOUS,Lady Gaga,6,5,6,9,7,14,18,7,3,8
+3029,Money Honey,Lady Gaga,3,8,3,0,15,5,18,2,7,7
+3028,Fashion of His Love,Lady Gaga,8,4,6,6,8,15,17,5,4,7
+3026,Stuck on Fuckin’ You,Lady Gaga,5,6,7,6,7,18,15,8,2,7
+3025,Summerboy,Lady Gaga,5,11,3,7,8,12,13,6,5,9
+3020,Black Jesus + Amen Fashion,Lady Gaga,4,8,3,4,6,10,13,3,3,9
+3019,I Like It Rough,Lady Gaga,5,0,3,7,3,11,10,3,2,3
+3018,Starstruck,Lady Gaga,2,9,5,7,7,22,25,7,7,15
+3017,Highway Unicorn (Road to Love),Lady Gaga,5,4,2,5,4,9,10,9,2,5
+3014,The Fame,Lady Gaga,13,6,8,8,6,19,13,6,2,7
+3012,Electric Chapel,Lady Gaga,6,5,6,7,8,12,16,6,5,8
+3011,Brown Eyes,Lady Gaga,7,5,3,5,5,13,8,4,5,3
+3004,Boys Boys Boys,Lady Gaga,6,6,5,8,8,17,17,8,5,8
+3002,Hair Body Face,Lady Gaga,5,5,6,7,8,12,16,6,4,7
+3001,Before I Cry,Lady Gaga,6,7,4,8,5,10,13,8,3,4
+3000,Government Hooker,Lady Gaga,4,5,6,5,5,12,13,6,1,8
+2999,Heavy Metal Lover,Lady Gaga,8,5,7,6,9,18,17,6,6,4
+2995,Come to Mama,Lady Gaga,7,6,3,8,4,10,10,4,1,8
+2994,So Happy I Could Die,Lady Gaga,4,7,3,4,7,9,15,8,3,6
+2986,Sinner’s Prayer,Lady Gaga,11,14,13,12,10,21,18,13,7,7
+2985,Dance in the Dark,Lady Gaga,8,8,9,9,10,20,17,12,6,7
+2983,The Edge of Glory,Lady Gaga,5,4,1,6,4,9,9,5,2,2
+2982,Monster,Lady Gaga,5,5,8,8,9,16,20,6,5,11
+2980,Dancin’ in Circles,Lady Gaga,8,5,7,9,5,17,11,10,4,5
+2979,Hey Girl,Lady Gaga,5,4,4,5,6,10,11,8,4,5
+2978,A-YO,Lady Gaga,5,7,3,6,4,14,10,8,2,4
+2976,Speechless,Lady Gaga,14,5,10,12,7,22,18,15,6,4
+2975,Diamond Heart,Lady Gaga,8,5,8,9,8,16,16,12,6,8
+2972,Look What I Found,Lady Gaga,6,4,5,3,7,5,8,5,2,5
+2970,1000 Doves,Lady Gaga,9,8,5,11,8,21,18,16,4,10
+2965,I’ll Never Love Again (Film Version),Lady Gaga,6,13,7,10,11,19,16,9,5,9
+2963,Joanne,Lady Gaga,2,7,3,2,8,4,10,4,4,7
+2961,Yoü and I,Lady Gaga,9,10,7,13,10,15,20,11,4,8
+2953,Just Dance,Lady Gaga,6,8,6,5,7,15,23,13,6,10
+2952,John Wayne,Lady Gaga,9,5,5,8,8,17,13,6,5,6
+2951,Judas,Lady Gaga,11,5,13,9,3,25,21,9,3,6
+2949,Alejandro,Lady Gaga,8,5,5,11,6,15,16,11,3,5
+2947,Paparazzi,Lady Gaga,8,6,4,3,13,16,23,5,3,12
+2946,Gypsy,Lady Gaga,5,12,7,6,9,15,21,7,7,8
+2945,Babylon,Lady Gaga,2,4,2,1,5,10,12,2,4,6
+2943,Telephone,Lady Gaga,6,8,7,8,6,17,14,10,4,9
+2941,Perfect Illusion,Lady Gaga,4,4,2,7,5,13,10,9,2,6
+2940,Venus,Lady Gaga,7,10,3,11,9,14,21,8,5,9
+2939,Applause,Lady Gaga,3,5,3,5,7,11,12,4,11,6
+2938,Born This Way,Lady Gaga,11,11,8,12,17,20,27,12,4,17
+2937,The Cure,Lady Gaga,6,4,6,7,8,12,13,8,1,7
+2934,Million Reasons,Lady Gaga,3,7,6,5,6,12,15,5,4,7
+2933,Poker Face,Lady Gaga,8,11,4,7,11,16,19,5,6,8
+2932,I’ll Never Love Again (Extended Version),Lady Gaga,6,13,6,10,11,19,17,9,5,11
+2930,Bad Romance,Lady Gaga,8,8,8,11,8,17,15,8,4,7
+2929,Always Remember Us This Way,Lady Gaga,6,6,4,6,7,13,14,8,4,8
+3007,Paper Gangsta,Lady Gaga,6,6,4,4,5,11,22,6,2,7
+2971,Jewels N’ Drugs,Lady Gaga,23,17,18,23,13,49,39,21,10,20
+3100,Retro Physical,Lady Gaga,11,12,6,9,11,18,20,7,5,11
+3099,Wish You Were Here,Lady Gaga,6,5,2,9,3,11,7,5,2,3
+3092,No Floods,Lady Gaga,9,11,6,10,7,12,23,5,7,12
+3089,Sexxx Dreams (Demo),Lady Gaga,17,9,16,18,9,33,20,16,1,11
+3084,Stupid Love (Ellis Remix),Lady Gaga,4,4,5,5,5,13,9,7,1,5
+3069,Born This Way Monologue,Lady Gaga,9,10,6,15,10,20,25,7,5,15
+3067,Smile (One World: Together At Home),Lady Gaga,4,7,2,5,6,9,12,8,4,4
+3064,Ratchet,Lady Gaga,3,1,2,3,2,6,4,1,1,3
+3040,Burqa,Lady Gaga,9,10,10,12,13,20,20,9,6,10
+3038,Lush Life,Lady Gaga,12,7,8,13,5,26,18,16,3,9
+3035,Christmas Tree,Lady Gaga,3,5,3,4,4,7,13,3,4,6
+3005,"Eh, Eh (Nothing Else I Can Say)",Lady Gaga,4,6,3,3,5,10,14,3,2,7
+2981,Marry the Night,Lady Gaga,9,12,4,10,10,18,18,12,7,9
+2974,Cake Like Lady Gaga,Lady Gaga,13,7,12,14,5,25,19,11,2,12
+2973,Fashion!,Lady Gaga,6,6,6,6,7,13,18,5,2,10
+2967,Enigma,Lady Gaga,4,8,3,8,6,10,13,5,5,5
+2964,Swine,Lady Gaga,5,3,6,9,4,11,14,4,3,3
+2960,Fun Tonight,Lady Gaga,9,12,5,13,7,15,16,8,7,6
+2955,Is That Alright?,Lady Gaga,5,9,6,11,11,14,25,7,7,10
+2950,Stupid Love,Lady Gaga,4,4,5,5,5,13,9,7,1,5
+2944,Aura,Lady Gaga,10,10,11,13,13,19,20,8,6,9
+2942,Donatella,Lady Gaga,5,4,6,6,7,17,21,7,3,8
+2936,911,Lady Gaga,6,7,4,7,10,12,20,5,3,8
+2935,G.U.Y.,Lady Gaga,7,9,4,8,7,14,24,8,7,13
+2931,Sexxx Dreams,Lady Gaga,16,11,14,13,8,30,20,12,2,12
+2987,Grigio Girls,Lady Gaga,3,6,1,5,7,10,13,8,3,5
+2962,ARTPOP,Lady Gaga,4,10,4,5,10,7,18,8,4,7
+3079,MANiCURE (Demo),Lady Gaga,8,11,4,5,10,19,20,7,7,11
+3031,Brooklyn Nights,Lady Gaga,10,12,5,9,10,16,21,9,5,10
+3015,Princess Die,Lady Gaga,10,6,8,14,8,21,21,11,4,7
+3013,I Wanna Be With U,Lady Gaga,9,9,5,8,8,12,12,9,6,5
+2956,Replay,Lady Gaga,10,5,11,11,3,18,11,10,2,6
+3068,White Christmas (Live),Lady Gaga,2,3,4,2,5,4,10,1,1,2
+3021,"Beautiful, Dirty, Rich",Lady Gaga,8,5,7,5,6,15,11,6,5,6
+3003,Teeth,Lady Gaga,8,5,6,9,7,13,14,6,4,11
+2977,Bloody Mary,Lady Gaga,5,8,5,5,6,13,17,6,5,8
+2966,MANiCURE,Lady Gaga,7,5,3,8,4,15,9,8,3,3
+3081,Red and Blue,Lady Gaga,5,4,3,6,7,13,15,5,5,7
+3106,Ribbons,Lady Gaga,7,9,4,3,8,16,19,4,4,7
+3105,Orange Colored Sky (Live),Lady Gaga,7,10,4,7,10,17,17,7,7,7
+3060,We Could Be Lovers,Lady Gaga,11,5,8,16,7,22,10,8,4,6
+2989,Just Another Day,Lady Gaga,6,3,5,3,9,10,19,6,6,5
+3046,Ev’ry Time We Say Goodbye,Lady Gaga,3,8,3,5,7,7,12,6,3,6
+3027,Do What U Want (Remix),Lady Gaga,10,7,7,10,3,16,8,8,7,5
+3016,Your Song,Lady Gaga,8,8,3,8,12,11,20,6,8,15
+3009,Somewhere Over the Rainbow (Dialogue),Lady Gaga,0,1,1,3,2,5,6,3,1,3
+2968,Plastic Doll,Lady Gaga,2,3,3,4,2,7,8,4,1,4
+2959,Dope,Lady Gaga,9,7,4,12,8,15,16,15,4,5
+2928,Do What U Want,Lady Gaga,13,12,9,12,6,20,18,11,8,11
+3054,Do What U Want (Solo Version),Lady Gaga,10,7,6,9,3,14,7,8,7,4
+3032,Angel Down (Work Tape),Lady Gaga,7,4,4,4,4,14,9,4,3,7
+2984,Angel Down,Lady Gaga,7,4,4,4,4,14,9,4,4,7
+2993,Americano,Lady Gaga,4,5,1,6,3,6,8,4,3,4
+3045,Rain On Me (Demo),Lady Gaga,2,5,3,4,3,6,8,3,1,5
+3043,"Retro, Dance, Freak",Lady Gaga,3,8,7,9,6,9,15,6,1,8
+2996,Hair,Lady Gaga,10,9,9,13,9,16,16,9,9,10
+2958,Scheiße,Lady Gaga,8,4,5,9,5,14,11,5,1,6
+3023,1000 Doves (Piano Demo),Lady Gaga,7,10,6,11,8,20,19,17,6,11
+2991,La Vie en Rose,Lady Gaga,1,2,0,0,2,2,3,1,1,2
+2990,Heal Me,Lady Gaga,8,9,5,8,7,13,17,7,4,8
+2992,Love Me Right,Lady Gaga,4,6,7,9,6,15,11,9,4,9
+2988,Why Did You Do That?,Lady Gaga,5,6,6,5,4,12,10,5,4,7
+2948,Alice,Lady Gaga,6,5,7,4,4,11,9,5,3,4
+2969,LoveGame,Lady Gaga,4,6,2,3,7,12,17,6,5,4
+2954,Free Woman,Lady Gaga,4,4,3,5,4,7,7,4,4,4
+2957,Mary Jane Holland,Lady Gaga,8,9,8,10,8,19,16,10,6,8
+3024,The Queen,Lady Gaga,12,10,8,18,6,24,16,12,5,6
+3070,TEA,Lady Gaga,5,4,3,5,4,5,9,3,3,4
+3323,Yoü and I (Joe Biden Election Night Rally 2020),Lady Gaga,11,17,8,13,17,21,33,13,8,17
+3306,The Edge of Glory (Porter Robinson Remix),Lady Gaga,3,3,0,4,3,7,7,3,0,2
+3300,Born This Way (LA Riots Remix),Lady Gaga,6,7,4,7,9,8,15,7,2,9
+3298,The Edge of Glory (Cahill Club Mix),Lady Gaga,5,4,1,6,4,9,9,5,2,2
+3289,Born This Way (Grum Remix),Lady Gaga,7,9,5,8,13,10,20,7,2,13
+3286,Born This Way (Chew Fu Born to Fix Remix),Lady Gaga,10,10,7,12,15,18,23,11,3,15
+3280,Born This Way (Bimbo Jones Club Remix),Lady Gaga,10,10,7,12,15,19,24,12,3,15
+3272,The Edge of Glory - Foster The People Remix,Lady Gaga,3,4,1,3,3,4,8,3,2,2
+3224,Telephone (Fanmade Version),Lady Gaga,5,6,5,6,5,12,12,5,2,8
+3210,Born This Way - Zedd Remix,Lady Gaga,7,9,5,8,13,10,20,7,2,13
+3199,Just Dance - Live at Cherrytree House Stripped Down Version,Lady Gaga,1,3,3,2,5,6,11,5,2,4
+3180,When She Go (Demo),Lady Gaga,2,4,0,4,5,4,13,2,1,7
+3167,Fashion of His Love (Fernando Garibay Remix),Lady Gaga,8,4,6,6,8,14,16,5,4,7
+3153,Oh Baby (Demo),Lady Gaga,3,6,4,4,8,5,10,5,1,6
+3145,New York (Demo),Lady Gaga,4,1,7,4,3,14,9,4,1,3
+3144,Bad Romance (Skrillex Remix),Lady Gaga,9,8,9,12,8,18,14,9,5,7
+3142,Poker Face - Live at The Cherrytree House Piano & Voice Version,Lady Gaga,8,11,4,6,11,15,19,5,6,8
+3141,Applause (Empire of the Sun Remix),Lady Gaga,3,5,3,6,7,12,13,5,11,6
+3126,Shut Up (Demo),Lady Gaga,3,3,2,1,6,6,11,1,1,7
+3123,Born This Way - Jost & Naaf Remix,Lady Gaga,7,9,5,8,13,11,21,8,2,13
+3116,Something Crazy,Lady Gaga,6,3,2,9,1,10,6,6,2,1
+3307,Shallow (Joe Biden Election Night Rally 2020),Lady Gaga,10,17,7,11,8,19,18,10,8,12
+3234,Little Monsters,Lady Gaga,3,5,7,5,5,10,11,5,1,7
+3211,"Eh, Eh (Nothing Else I Can Say) - Piano and Human Beat Box Version",Lady Gaga,3,5,3,3,4,10,13,3,1,6
+3204,Fountain Of Truth,Lady Gaga,17,12,9,14,11,21,30,12,4,16
+3193,Yay Ha (Demo),Lady Gaga,4,2,3,4,4,10,11,7,2,2
+3147,Marry the Night (Zedd Remix),Lady Gaga,8,10,4,8,10,13,15,11,7,9
+3107,Posh Life,Lady Gaga,5,7,4,7,8,14,16,9,3,10
+3139,Words,Lady Gaga,5,4,2,4,5,7,11,3,4,6
+3301,Judas (Thomas Gold Remix),Lady Gaga,3,3,3,2,1,7,6,3,1,2
+3232,Judas - Hurts Remix,Lady Gaga,6,4,6,4,1,12,13,6,1,5
+3157,Judas (DJ White Shadow Remix),Lady Gaga,0,0,1,1,1,1,3,0,0,1
+3117,Temple,Lady Gaga,0,1,0,2,1,2,3,2,0,0
+3111,Shake Ur Kitty,Lady Gaga,4,3,2,3,4,11,14,6,1,3
+3110,Retrosexual,Lady Gaga,8,4,3,8,3,13,14,5,3,2
+3138,Scheiße (DJ White Shadow Mugler),Lady Gaga,5,2,4,6,0,11,3,5,1,2
+3166,Black Jesus (Demo),Lady Gaga,3,2,0,3,1,4,5,1,1,3
+3295,LoveGame - Robots To Mars Remix,Lady Gaga,4,6,2,3,7,12,16,6,5,4
+3112,Oh Well,Lady Gaga,6,1,1,6,3,9,7,6,0,3
+3325,Just Dance (Breathe Electric Remix),Lady Gaga,1,1,0,2,0,1,1,1,0,0
+3208,Judas - Goldfrapp Remix,Lady Gaga,1,0,1,2,1,3,4,3,0,1
+3192,Frankenstein*,Lady Gaga,1,1,0,2,0,1,1,1,0,0
+3127,Maren,Lady Gaga,1,1,0,2,0,1,1,1,0,0
+3287,The Edge of Glory - Sultan & Ned Shepard Remix,Lady Gaga,0,2,0,1,1,1,4,0,1,2
+3317,The Edge of Glory (Funkagenda Remix),Lady Gaga,0,2,0,1,1,1,4,0,0,2
+3303,The Edge of Glory (Bare Noize Remix),Lady Gaga,0,2,0,1,1,1,4,0,0,2

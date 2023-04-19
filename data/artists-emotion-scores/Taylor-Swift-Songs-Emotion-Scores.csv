@@ -1,0 +1,279 @@
+song_id,title,artist,anger_score,anticipation_score,disgust_score,fear_score,joy_score,negative_score,positive_score,sadness_score,surprise_score,trust_score
+5672,Fearless,Taylor Swift,5,6,3,4,6,12,20,3,3,13
+5643,Reputation [Prologue],Taylor Swift,20,25,20,19,26,40,54,20,16,35
+5655,Long Live,Taylor Swift,16,19,13,20,13,39,22,11,11,16
+5670,Picture to Burn,Taylor Swift,9,10,7,10,7,12,16,10,3,12
+5669,Our Song,Taylor Swift,11,8,6,11,9,21,21,9,7,8
+5667,Sparks Fly,Taylor Swift,6,9,3,10,9,14,23,4,8,13
+5657,The Moment I Knew,Taylor Swift,8,16,6,13,14,19,25,12,9,11
+5639,I Know Places,Taylor Swift,9,7,6,11,5,19,13,13,2,6
+5638,Safe & Sound,Taylor Swift,6,4,5,7,5,13,12,7,3,5
+5631,Lover (Remix),Taylor Swift,10,5,9,14,9,19,24,11,4,12
+5628,New Romantics,Taylor Swift,10,10,5,10,7,29,14,14,3,8
+5626,We Are Never Ever Getting Back Together,Taylor Swift,6,6,4,11,7,14,20,6,4,10
+5621,You Belong with Me,Taylor Swift,7,7,4,5,10,12,18,6,5,9
+5620,Out of the Woods,Taylor Swift,7,9,9,8,9,17,17,9,7,8
+5619,Shake It Off,Taylor Swift,9,4,10,7,6,19,13,10,5,5
+5615,​cowboy like me,Taylor Swift,5,11,4,9,11,17,21,6,4,9
+5611,​coney island,Taylor Swift,11,16,12,13,15,31,33,20,12,15
+5610,Dancing with Our Hands Tied,Taylor Swift,7,9,5,10,10,12,21,9,5,9
+5609,I Think He Knows,Taylor Swift,2,7,3,2,7,9,12,4,4,5
+5607,This is Why We Can’t Have Nice Things,Taylor Swift,9,7,4,11,10,19,27,8,7,11
+5606,So It Goes...,Taylor Swift,9,4,8,12,5,18,12,13,7,7
+5605,Paper Rings,Taylor Swift,4,9,5,9,7,21,17,9,4,7
+5601,Death by a Thousand Cuts,Taylor Swift,7,10,7,9,5,18,18,8,4,9
+5598,King of My Heart,Taylor Swift,4,4,2,8,8,10,15,9,1,4
+5594,Cornelia Street,Taylor Swift,7,8,5,7,8,13,19,7,7,13
+5591,Bad Blood,Taylor Swift,8,3,7,9,7,15,15,8,3,8
+5583,Love Story,Taylor Swift,14,13,8,17,9,29,23,14,6,11
+5579,Don’t Blame Me,Taylor Swift,10,5,8,10,4,14,11,11,5,4
+5571,​illicit affairs,Taylor Swift,16,11,18,14,9,29,24,15,5,13
+5568,Bad Blood (Remix),Taylor Swift,19,8,11,20,7,33,25,15,4,11
+5567,Cruel Summer,Taylor Swift,11,12,11,15,9,19,19,15,7,12
+5566,Call It What You Want,Taylor Swift,7,9,6,8,12,23,24,10,3,14
+5563,​invisible string,Taylor Swift,11,12,8,10,13,21,23,13,8,13
+5559,Blank Space,Taylor Swift,21,16,15,21,15,39,29,17,9,15
+5558,...Ready for It?,Taylor Swift,6,3,6,15,3,19,11,13,2,2
+5555,ME!,Taylor Swift,4,2,1,4,8,12,13,6,1,5
+5551,​the 1,Taylor Swift,10,13,6,8,11,17,28,10,5,17
+5548,​cardigan,Taylor Swift,13,11,14,13,11,26,19,10,7,9
+5593,London Boy,Taylor Swift,3,13,3,6,15,10,25,8,7,13
+5585,"​no body, no crime",Taylor Swift,9,3,9,9,6,18,15,7,3,13
+5636,Dear John,Taylor Swift,6,8,8,12,7,20,22,14,3,10
+5677,Breathe,Taylor Swift,6,7,3,10,9,14,17,13,5,10
+5674,Starlight,Taylor Swift,6,6,3,8,5,19,19,12,5,6
+5673,White Horse,Taylor Swift,7,5,4,5,5,20,19,10,5,10
+5671,The Story of Us,Taylor Swift,14,10,8,16,8,30,22,16,7,8
+5665,I Almost Do,Taylor Swift,8,7,9,9,3,16,12,6,2,5
+5664,The Lucky One,Taylor Swift,8,9,5,8,12,15,23,9,6,15
+5663,Sad Beautiful Tragic,Taylor Swift,7,10,6,6,9,15,13,8,6,8
+5652,Mine,Taylor Swift,14,13,8,15,8,28,20,16,6,9
+5651,Holy Ground,Taylor Swift,7,6,7,6,7,15,15,7,5,10
+5649,Last Kiss,Taylor Swift,8,10,6,8,9,14,23,8,5,11
+5647,Enchanted,Taylor Swift,10,16,5,10,15,20,30,12,13,17
+5646,I Wish You Would,Taylor Swift,7,7,7,6,5,13,13,7,3,4
+5644,If You’re Anything Like Me [Poem],Taylor Swift,16,14,9,23,17,33,35,18,8,18
+5637,State of Grace,Taylor Swift,10,7,7,12,7,21,23,12,7,8
+5635,Everything Has Changed,Taylor Swift,5,7,7,8,9,13,16,8,5,8
+5632,You Are in Love,Taylor Swift,5,5,2,6,7,15,15,6,4,7
+5630,22,Taylor Swift,10,8,6,9,7,16,17,10,5,7
+5629,​it’s time to go,Taylor Swift,7,6,6,8,6,19,20,6,4,9
+5625,I Knew You Were Trouble.,Taylor Swift,9,4,5,6,3,16,8,7,2,5
+5618,Clean,Taylor Swift,6,8,7,9,6,21,14,10,6,11
+5616,​l​ong story short,Taylor Swift,10,10,7,10,5,28,21,10,6,6
+5613,​dorothea,Taylor Swift,7,2,5,7,2,14,13,8,1,7
+5612,Afterglow,Taylor Swift,10,5,4,11,4,21,14,14,3,5
+5603,​the lakes,Taylor Swift,5,8,1,8,5,13,16,10,1,9
+5602,I Forgot That You Existed,Taylor Swift,10,13,6,9,10,16,18,8,9,12
+5595,All Too Well,Taylor Swift,14,9,14,11,9,24,24,18,5,15
+5590,​tolerate it,Taylor Swift,11,14,7,8,10,24,24,11,8,9
+5589,​gold rush,Taylor Swift,11,7,8,10,7,21,22,13,2,7
+5588,The Archer,Taylor Swift,10,7,7,13,8,15,16,10,5,8
+5586,Getaway Car,Taylor Swift,20,11,11,17,8,29,19,17,10,10
+5584,​happiness,Taylor Swift,13,15,13,14,16,35,34,18,11,20
+5581,Dress,Taylor Swift,7,11,4,10,3,19,18,9,4,12
+5576,​mad woman,Taylor Swift,18,8,10,17,3,26,15,10,5,9
+5575,​peace,Taylor Swift,11,9,9,14,8,24,19,13,6,10
+5573,Gorgeous,Taylor Swift,11,8,9,14,8,22,21,18,4,11
+5570,​seven,Taylor Swift,17,9,9,18,8,24,20,12,8,3
+5561,​willow,Taylor Swift,9,8,7,11,4,19,16,11,5,9
+5560,​my tears ricochet,Taylor Swift,23,10,16,21,9,33,23,16,7,11
+5556,You Need To Calm Down,Taylor Swift,14,9,11,15,8,20,24,10,6,10
+5553,​betty,Taylor Swift,13,12,10,10,12,22,28,11,5,14
+5552,Look What You Made Me Do,Taylor Swift,8,6,5,4,4,12,13,5,2,5
+5550,Lover,Taylor Swift,12,6,7,15,7,23,19,12,5,10
+5676,Come Back... Be Here,Taylor Swift,8,8,7,7,5,16,14,11,7,5
+5653,Treacherous,Taylor Swift,6,5,4,6,4,11,14,6,5,4
+5633,Wonderland,Taylor Swift,9,5,4,10,8,20,19,8,5,7
+5599,​’tis the damn season,Taylor Swift,8,11,9,10,7,25,15,11,5,11
+5587,​epiphany,Taylor Swift,5,4,7,8,5,17,10,9,1,6
+5562,​champagne problems,Taylor Swift,10,9,8,14,10,26,24,13,7,11
+5660,The Last Time,Taylor Swift,4,6,1,8,2,7,11,6,3,4
+5623,​closure,Taylor Swift,7,6,6,6,4,14,11,8,2,4
+5659,Better Than Revenge,Taylor Swift,11,12,5,10,9,19,22,9,10,19
+5569,Style,Taylor Swift,4,7,6,4,3,15,12,5,4,5
+5574,​evermore,Taylor Swift,14,10,9,17,3,30,12,15,6,8
+5564,​the last great american dynasty,Taylor Swift,14,11,12,15,11,24,30,14,6,12
+5549,​exile,Taylor Swift,7,4,6,9,4,16,18,10,6,4
+5572,​this is me trying,Taylor Swift,15,2,7,13,1,27,7,9,1,4
+5592,Miss Americana & The Heartbreak Prince,Taylor Swift,15,14,6,18,10,28,22,20,10,14
+5650,How You Get the Girl,Taylor Swift,4,5,0,9,2,11,8,6,4,2
+5597,Daylight,Taylor Swift,13,9,8,18,5,31,21,16,5,11
+5627,​r​ight where you left me,Taylor Swift,13,10,4,20,4,32,20,14,5,11
+5604,New Year’s Day,Taylor Swift,5,5,5,6,5,15,11,9,3,5
+5554,End Game,Taylor Swift,18,4,7,11,7,36,22,14,3,11
+5675,Haunted,Taylor Swift,3,8,3,10,4,15,14,14,5,7
+5668,Innocent,Taylor Swift,8,6,8,10,4,18,12,10,5,8
+5658,Mean,Taylor Swift,11,6,9,11,4,25,14,13,4,6
+5656,Beautiful Ghosts,Taylor Swift,6,17,3,15,13,16,22,11,9,12
+5654,Back to December,Taylor Swift,9,13,8,15,14,19,25,13,5,13
+5648,Begin Again,Taylor Swift,4,11,1,6,8,8,20,7,4,5
+5634,This Love,Taylor Swift,9,11,8,11,9,14,13,12,7,8
+5596,Wildest Dreams,Taylor Swift,3,8,4,3,5,13,16,5,6,5
+5580,I Did Something Bad,Taylor Swift,8,4,6,6,5,14,13,6,2,6
+5577,The Man,Taylor Swift,10,6,7,10,6,17,19,6,2,9
+5642,Welcome to New York,Taylor Swift,7,5,4,10,6,14,13,11,2,6
+5608,False God,Taylor Swift,8,11,5,15,8,23,17,10,6,9
+5624,Why She Disappeared [Poem],Taylor Swift,14,15,11,24,12,40,33,16,11,18
+5582,​hoax,Taylor Swift,11,7,6,13,8,20,19,15,7,8
+5578,​mirrorball,Taylor Swift,7,5,5,12,8,10,15,7,5,5
+5565,Delicate,Taylor Swift,3,4,4,4,3,8,9,5,0,3
+5557,​august,Taylor Swift,2,5,2,5,3,10,10,7,4,3
+5666,Fifteen,Taylor Swift,6,7,6,8,10,14,23,6,4,10
+5617,​marjorie,Taylor Swift,6,7,5,7,5,10,15,6,1,3
+5614,Soon You’ll Get Better,Taylor Swift,7,5,4,9,4,13,12,5,4,7
+5600,​ivy,Taylor Swift,13,19,7,19,13,28,21,16,3,18
+5662,Teardrops on My Guitar,Taylor Swift,3,8,4,2,13,9,22,8,7,9
+5641,Red,Taylor Swift,13,7,8,13,8,23,16,17,5,11
+5640,All You Had to Do Was Stay,Taylor Swift,4,2,5,4,2,9,7,4,1,2
+5622,It’s Nice to Have a Friend,Taylor Swift,4,5,4,6,6,10,14,4,1,7
+5788,Folklore [Foreword],Taylor Swift,19,19,12,19,16,40,41,21,8,25
+6011,Fearless (Live From Clear Channel Stripped 2008),Taylor Swift,5,6,3,4,6,12,20,3,3,13
+5846,"Fearless / I’m Yours / Hey, Soul Sister (Live/2011)",Taylor Swift,4,6,2,4,4,11,14,2,1,8
+5998,Long Live (Live/2011),Taylor Swift,18,20,13,21,14,44,27,12,11,17
+5897,Taylor Swift’s First Phone Call With Tim McGraw,Taylor Swift,13,27,12,18,28,26,57,12,14,32
+6010,Should’ve Said No (Live from SoHo),Taylor Swift,8,4,6,7,5,15,16,9,3,7
+5999,Our Song (Live from SoHo),Taylor Swift,11,8,6,11,9,21,21,9,7,8
+5992,Love Story (Live From Clear Channel Stripped 2008),Taylor Swift,14,13,8,17,9,29,23,14,6,11
+5991,Speak Now (Live/2011),Taylor Swift,8,18,6,12,18,17,30,9,10,16
+5990,Sparks Fly (Live/2011),Taylor Swift,6,10,3,10,9,17,26,5,8,14
+5979,​invisible string (the long pond studio sessions),Taylor Swift,11,12,8,10,13,21,23,13,8,13
+5974,​illicit affairs (the long pond studio sessions),Taylor Swift,16,11,18,14,9,29,23,15,5,13
+5971,ME! (Live from Paris),Taylor Swift,4,2,1,4,8,10,12,6,1,4
+5963,Picture to Burn (Live From SoHo),Taylor Swift,9,10,7,10,7,12,16,10,3,12
+5961,​cardigan (the long pond studio sessions),Taylor Swift,13,11,14,13,11,26,19,10,7,9
+5957,AMAs Artist of the Decade Performance,Taylor Swift,31,23,27,34,17,67,40,33,10,25
+5936,Death by a Thousand Cuts (Live from Paris),Taylor Swift,7,10,7,9,5,18,18,8,4,9
+5935,​the 1 (the long pond studio sessions),Taylor Swift,10,13,6,8,11,17,28,10,5,17
+5914,Cornelia Street (Live from Paris),Taylor Swift,7,8,5,7,8,13,19,7,7,13
+5900,Umbrella (Live from SoHo),Taylor Swift,1,4,1,2,6,1,13,3,2,6
+5883,Should’ve Said No (Alternate Version),Taylor Swift,8,4,6,7,5,15,16,9,3,7
+5871,The Sweet Escape (Live/2011),Taylor Swift,8,10,7,10,10,20,26,13,6,15
+5867,​willow (lonely witch version),Taylor Swift,9,8,7,11,5,19,17,11,5,9
+5853,Style / Love Story / You Belong With Me,Taylor Swift,13,16,12,13,11,35,27,16,8,12
+5827,We Are Never Ever Getting Back Together/This Is Why We Can’t Have Nice Things,Taylor Swift,9,7,4,12,10,21,28,10,7,11
+5796,Love Story (Digital Dog Remix),Taylor Swift,14,13,8,17,9,29,23,14,6,11
+5784,...Ready for It? (BloodPop® Remix),Taylor Swift,6,3,6,15,3,19,11,13,2,2
+5780,All Night Diner,Taylor Swift,6,8,4,6,6,9,13,5,2,7
+5778,Christmases When You Were Mine,Taylor Swift,4,7,3,10,5,10,15,8,2,6
+5771,Bad Blood/Should’ve Said No,Taylor Swift,11,3,8,11,7,18,19,9,3,9
+5751,I Want You Back (Live/2011),Taylor Swift,0,3,0,2,4,2,5,3,2,2
+5747,Santa Baby,Taylor Swift,6,7,6,5,6,9,13,5,5,6
+5743,I Heart ?,Taylor Swift,6,6,7,3,5,18,15,9,2,3
+5740,Forever & Always (Piano Version),Taylor Swift,8,9,6,9,5,14,13,6,3,6
+5738,This Is What You Came For (Live),Taylor Swift,3,2,1,3,1,4,6,2,2,1
+5731,Beautiful Eyes,Taylor Swift,1,7,1,1,7,5,11,4,2,3
+5725,Last Christmas,Taylor Swift,4,7,3,8,13,8,18,3,5,7
+5714,Invisible,Taylor Swift,3,3,1,2,6,7,11,3,2,8
+5713,The Outside,Taylor Swift,5,2,4,6,3,8,7,7,2,2
+5712,The Other Side of the Door,Taylor Swift,12,6,9,10,7,26,21,10,5,8
+5711,Crazier,Taylor Swift,3,2,2,6,2,7,8,7,0,5
+5708,Jump Then Fall,Taylor Swift,7,6,3,13,6,15,19,9,8,7
+5705,Blank Space (Voice Memo),Taylor Swift,10,9,7,12,9,19,22,15,4,11
+5702,I Know Places (Voice Memo),Taylor Swift,7,17,8,13,10,22,29,18,5,15
+5699,Tied Together with a Smile,Taylor Swift,3,6,4,4,10,10,18,8,4,7
+5694,You’re Not Sorry,Taylor Swift,5,6,4,7,4,13,15,5,1,5
+5691,If This Was a Movie,Taylor Swift,9,8,5,9,8,14,12,9,5,4
+5687,Should’ve Said No,Taylor Swift,8,4,6,7,5,15,16,9,3,7
+5682,Speak Now,Taylor Swift,8,18,6,12,18,17,30,9,10,16
+5678,Forever & Always,Taylor Swift,8,9,6,9,5,14,13,6,3,6
+6000,Dear John (Live/2011),Taylor Swift,6,8,8,12,7,20,22,14,3,10
+6009,Last Kiss (Live/2011),Taylor Swift,8,10,6,8,9,14,23,8,5,11
+6007,Tim McGraw (Live from SoHo),Taylor Swift,5,13,6,4,9,12,17,8,5,9
+6002,Mine (Live/2011),Taylor Swift,14,13,8,15,8,28,20,16,6,9
+5997,Enchanted (Live/2011),Taylor Swift,10,16,5,10,15,20,30,12,13,17
+5993,The Story Of Us (Live/2011),Taylor Swift,14,12,8,17,9,34,26,18,7,8
+5984,The Archer (Live from Paris),Taylor Swift,10,7,7,13,8,15,16,10,5,8
+5983,You Need To Calm Down (Live from Paris),Taylor Swift,14,9,11,15,8,20,24,10,6,10
+5982,​peace (the long pond studio sessions),Taylor Swift,11,9,9,14,8,24,19,13,6,10
+5978,​mad woman (the long pond studio sessions),Taylor Swift,18,8,10,17,3,26,15,10,5,9
+5970,Lover (Live from Paris),Taylor Swift,12,6,7,15,7,23,19,12,5,10
+5968,​seven (the long pond studio sessions),Taylor Swift,17,8,9,18,8,24,20,12,8,3
+5956,​betty (the long pond studio sessions),Taylor Swift,13,12,10,10,12,22,28,11,5,14
+5951,​the lakes (the long pond studio sessions),Taylor Swift,5,8,1,8,5,13,16,10,1,9
+5926,Long Live (Remix),Taylor Swift,13,11,11,14,5,26,13,8,7,9
+5911,​betty (Live from the 2020 Academy of Country Music Awards),Taylor Swift,13,12,10,10,12,23,28,12,5,14
+5907,​willow (moonlit witch version),Taylor Swift,9,8,7,11,4,19,16,11,5,9
+5894,​my tears ricochet (the long pond studio sessions),Taylor Swift,23,10,16,21,9,33,23,16,7,11
+5891,Clean/Long Live/New Year’s Day,Taylor Swift,13,16,11,17,13,40,26,16,11,15
+5845,​willow [dancing witch version (Elvira remix)],Taylor Swift,9,8,7,11,4,19,16,11,5,9
+5819,The 1989 World Tour - Special Guests,Taylor Swift,17,15,12,16,14,47,49,15,5,28
+5806,A Place In This World (Live from SoHo),Taylor Swift,6,9,3,6,7,14,15,9,7,7
+5794,Reputation Tour Costumes,Taylor Swift,3,4,6,3,5,6,11,3,3,2
+5765,State of Grace (Acoustic Version),Taylor Swift,10,7,7,12,7,20,23,12,6,8
+5762,Silent Night,Taylor Swift,1,9,2,5,13,3,21,3,2,11
+5748,Today Was a Fairytale,Taylor Swift,5,5,4,5,5,9,14,6,4,2
+5737,Long Live/New Year’s Day,Taylor Swift,12,11,10,14,10,33,19,12,9,10
+5720,SuperStar,Taylor Swift,6,7,5,8,11,11,20,4,6,11
+5717,A Place In This World,Taylor Swift,5,9,2,5,6,8,13,7,6,5
+5715,Macavity,Taylor Swift,21,13,17,27,11,36,25,15,10,15
+5706,Superman,Taylor Swift,6,5,6,7,9,18,22,10,4,16
+5703,Change,Taylor Swift,15,8,7,14,5,20,16,12,4,8
+5692,The Best Day,Taylor Swift,8,10,7,12,15,22,29,9,8,16
+5685,The Way I Loved You,Taylor Swift,16,13,13,14,15,29,27,11,10,18
+5680,Tim McGraw,Taylor Swift,5,10,6,4,8,10,15,7,4,9
+5981,​epiphany (the long pond studio sessions),Taylor Swift,5,4,7,8,5,17,10,9,1,6
+5790,Treacherous (Original Demo Recording),Taylor Swift,6,5,4,6,4,11,14,6,5,4
+5888,Reputation Tour Book Intro,Taylor Swift,16,14,10,14,16,25,32,13,6,18
+5697,Untouchable,Taylor Swift,3,5,2,5,3,8,11,5,2,4
+5988,Better Than Revenge (Live/2011),Taylor Swift,11,11,6,11,9,22,23,10,11,19
+5939,Barnyard Song,Taylor Swift,8,6,6,6,3,11,8,8,1,6
+5994,Mary’s Song (Oh My My My) (Live from SoHo),Taylor Swift,10,11,8,7,10,16,20,9,7,14
+5969,​the last great american dynasty (the long pond studio sessions),Taylor Swift,14,11,12,15,11,24,30,14,6,12
+5918,​exile (the long pond studio sessions),Taylor Swift,7,4,6,9,4,16,18,10,5,4
+5792,Taylor Swift’s Reputation (Reputation Tour Intro),Taylor Swift,13,12,6,9,5,20,27,8,3,12
+5701,Mary’s Song (Oh My My My),Taylor Swift,10,11,8,7,10,16,20,9,7,14
+5941,​this is me trying (the long pond studio sessions),Taylor Swift,15,2,7,13,1,27,7,9,1,4
+6006,Ours (Live/2011),Taylor Swift,7,8,5,10,9,26,18,11,5,10
+5696,Cold as You,Taylor Swift,9,6,8,11,6,18,17,10,2,7
+5679,Ours,Taylor Swift,7,8,5,10,9,26,18,11,5,10
+5756,Drops of Jupiter (Live/2011),Taylor Swift,11,10,7,13,11,23,19,10,6,8
+6005,Haunted (Live/2011),Taylor Swift,3,8,3,10,4,15,14,14,5,7
+6001,Mean (Live/2011),Taylor Swift,11,6,9,11,4,25,14,13,4,6
+5922,The Man (Live From Paris),Taylor Swift,10,6,7,10,6,17,19,6,2,9
+5826,Breathless,Taylor Swift,7,9,6,13,9,15,16,9,6,4
+5753,I Did Something Bad (Reputation Tour Remix),Taylor Swift,8,4,6,6,5,14,13,6,2,6
+5733,Wildest Dreams / Enchanted,Taylor Swift,4,11,5,3,9,15,21,8,8,10
+5722,Sweeter Than Fiction,Taylor Swift,9,13,4,6,8,18,16,10,6,8
+5698,Back to December / Apologize / You’re Not Sorry (Live/2011),Taylor Swift,9,13,8,15,14,20,27,15,5,14
+5903,Long Live Speeches,Taylor Swift,4,1,2,2,3,6,9,3,0,3
+5772,Delicate Speeches,Taylor Swift,4,1,2,2,3,6,9,3,0,3
+5723,I Wish You Would (Voice Memo),Taylor Swift,8,14,9,7,9,18,25,11,4,10
+5721,Eyes Open,Taylor Swift,7,12,3,5,6,14,17,10,7,9
+5976,​hoax (the long pond studio sessions),Taylor Swift,11,7,6,13,8,20,19,15,7,8
+5967,​mirrorball (the long pond studio sessions),Taylor Swift,7,5,5,12,8,10,15,7,5,5
+5954,​august (the long pond studio sessions),Taylor Swift,2,6,2,5,3,12,11,7,4,3
+5904,Stay Stay Stay / Ho Hey,Taylor Swift,12,15,7,14,11,19,22,11,6,9
+5730,Thug Story,Taylor Swift,14,9,6,13,5,18,18,10,1,10
+5726,Dark Blue Tennessee,Taylor Swift,6,8,5,8,5,13,10,11,3,5
+5707,Tell Me Why,Taylor Swift,8,4,7,7,5,19,13,8,4,7
+5684,Never Grow Up,Taylor Swift,11,8,7,12,8,16,18,13,4,9
+5681,Stay Stay Stay,Taylor Swift,12,10,6,13,8,16,17,8,5,5
+5955,Soon You’ll Get Better (One World: Together At Home),Taylor Swift,7,5,4,9,4,13,11,5,4,7
+5947,Daylight (Live from Paris),Taylor Swift,11,8,7,14,5,26,18,15,4,10
+5905,Love They Haven’t Thought of Yet,Taylor Swift,4,9,2,3,9,10,17,7,3,9
+5861,Bette Davis Eyes (Live/2011),Taylor Swift,5,7,3,4,6,16,13,7,4,3
+5742,I’d Lie,Taylor Swift,8,9,6,6,13,21,24,9,7,15
+5718,Come In With the Rain,Taylor Swift,4,8,3,5,5,7,11,5,5,3
+5695,Girl at Home,Taylor Swift,7,6,4,8,4,13,17,7,1,7
+5693,Hey Stephen,Taylor Swift,7,8,6,7,8,10,17,6,5,9
+5710,Stay Beautiful,Taylor Swift,2,3,2,3,6,3,16,2,2,9
+5849,Nashville (Live/2011),Taylor Swift,8,7,7,8,5,17,13,6,6,7
+5966,Teardrops On My Guitar (Acoustic),Taylor Swift,2,8,3,2,13,8,22,8,7,9
+5759,Teardrops on My Guitar (Pop Version),Taylor Swift,2,8,3,2,13,7,22,8,7,9
+5786,Christmas Must Be Something More,Taylor Swift,5,14,3,5,12,10,20,5,5,7
+5686,Red (Original Demo Recording),Taylor Swift,13,7,8,13,8,23,16,17,5,11
+5724,A Perfectly Good Heart,Taylor Swift,4,3,4,5,4,8,11,8,3,5
+5690,September,Taylor Swift,1,5,1,1,8,3,12,5,1,6
+5855,End Game (Solo Version),Taylor Swift,9,1,2,6,3,16,12,7,2,6
+5769,White Christmas,Taylor Swift,2,4,1,0,3,3,6,1,1,2
+5709,I’m Only Me When I’m with You,Taylor Swift,8,3,4,10,3,11,8,7,0,6
+6021,Should’ve Said No (Live from Clear Channel Stripped 2008),Taylor Swift,8,4,6,7,5,15,16,9,3,7
+6019,Picture To Burn (Live from Clear Channel Stripped 2008),Taylor Swift,9,10,7,10,7,12,16,10,3,12
+6013,Beautiful Eyes (Live From Clear Channel Stripped 2008),Taylor Swift,1,7,1,1,7,5,11,4,2,3
+6020,Rare Peer (Brenda Lee Tribute),Taylor Swift,19,22,16,16,21,39,61,23,13,26
+6016,Change (Live from Clear Channel Stripped 2008),Taylor Swift,15,8,7,14,5,20,16,12,4,8
+6015,Untouchable (Live from Clear  Channel Stripped 2008),Taylor Swift,3,5,2,5,3,8,11,5,2,4
+6022,Teardrops on my Guitar (Live from Clear Channel Stripped 2008),Taylor Swift,3,8,4,2,13,9,22,8,7,9
+6018,Teardrops on My Guitar (Live from SoHo),Taylor Swift,2,7,3,2,12,8,21,8,7,9
+6012,Teardrops On My Guitar (Cahill Radio Edit),Taylor Swift,2,8,3,2,13,8,22,8,7,9
