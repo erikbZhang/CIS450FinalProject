@@ -1,3 +1,4 @@
+# This query creates the SongScores Table
 SELECT
     Songs.song_id,
     Songs.title,
@@ -16,8 +17,6 @@ FROM
     Words
 JOIN
     Songs ON LOWER(Songs.lyrics) LIKE CONCAT('%', LOWER(Words.word), '%')
-WHERE
-    Songs.artist='Taylor Swift'
 GROUP BY
     Songs.song_id,
     Songs.title;
