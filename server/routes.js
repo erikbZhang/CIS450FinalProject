@@ -329,6 +329,86 @@ const emotionAlbums = async function(req, res) {
   });
 }
 
+// GET /songEmotionScore/:song_title
+const songEmotionScore = async function(req, res) {
+  const { song_title } = req.params;
+  connection.query(`
+    SELECT artist, title, anger_score, anticipation_score, disgust_score, fear_score, joy_score,
+          negative_score, positive_score, sadness_score, surprise_score, trust_score
+    FROM SongScores
+    WHERE title='${song_title}'
+  `, (err, data) => {
+    if (err || data.length === 0) {
+      console.log(err);
+      res.json({});
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+// GET /albumEmotionScore/:album_title
+const albumEmotionScore = async function(req, res) {
+  const { album_title } = req.params;
+  connection.query(`
+    WITH AlbumAvgScore AS (
+        SELECT s.artist, s.album, s.year, s.date,
+              AVG(ss.anger_score) AS avg_anger_score,
+              AVG(ss.anticipation_score) AS avg_anticipation_score,
+              AVG(ss.disgust_score) AS avg_disgust_score,
+              AVG(ss.fear_score) AS avg_fear_score,
+              AVG(ss.joy_score) AS avg_joy_score,
+              AVG(ss.negative_score) AS avg_negative_score,
+              AVG(ss.positive_score) AS avg_positive_score,
+              AVG(ss.sadness_score) AS avg_sadness_score,
+              AVG(ss.surprise_score) AS avg_surprise_score,
+              AVG(ss.trust_score) AS avg_trust_score
+        FROM Songs s
+        JOIN SongScores ss ON s.song_id = ss.song_id
+        GROUP BY s.album
+    )
+    SELECT * FROM AlbumAvgScore WHERE album='${album_title}';
+  `, (err, data) => {
+    if (err || data.length === 0) {
+      console.log(err);
+      res.json({});
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+// GET /artistEmotionScore/:artist
+const artistEmotionScore = async function(req, res) {
+  const { artist } = req.params;
+  connection.query(`
+    WITH ArtistAvgScore AS (
+        SELECT s.artist,
+              AVG(ss.anger_score) AS avg_anger_score,
+              AVG(ss.anticipation_score) AS avg_anticipation_score,
+              AVG(ss.disgust_score) AS avg_disgust_score,
+              AVG(ss.fear_score) AS avg_fear_score,
+              AVG(ss.joy_score) AS avg_joy_score,
+              AVG(ss.negative_score) AS avg_negative_score,
+              AVG(ss.positive_score) AS avg_positive_score,
+              AVG(ss.sadness_score) AS avg_sadness_score,
+              AVG(ss.surprise_score) AS avg_surprise_score,
+              AVG(ss.trust_score) AS avg_trust_score
+        FROM Songs s
+        JOIN SongScores ss ON s.song_id = ss.song_id
+        GROUP BY s.artist
+    )
+    SELECT * FROM ArtistAvgScore WHERE artist='${artist}'
+  `, (err, data) => {
+    if (err || data.length === 0) {
+      console.log(err);
+      res.json({});
+    } else {
+      res.json(data);
+    }
+  });
+}
+
 
 module.exports = {
   match,
@@ -337,5 +417,8 @@ module.exports = {
   misMatch, 
   emotionPlaylist,
   emotionArtists, 
-  emotionAlbums
+  emotionAlbums, 
+  songEmotionScore,
+  albumEmotionScore,
+  artistEmotionScore
 }
