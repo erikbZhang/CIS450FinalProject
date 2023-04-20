@@ -1,0 +1,150 @@
+# Query to create SongsExpandedDistinct Table
+
+WITH dummy AS (
+    SELECT
+        artist,
+        title,
+        album,
+        year,
+        date,
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(concat(lyrics, ' endoflyrics'), ' ', n), ' ', -1)) AS word
+    FROM
+        Songs
+        CROSS JOIN (
+            SELECT 1 + units.i + tens.i * 10 + hundreds.i * 100 AS n
+            FROM (
+                SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3
+                UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7
+                UNION SELECT 8 UNION SELECT 9
+            ) AS units
+            JOIN (
+                SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3
+                UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7
+                UNION SELECT 8 UNION SELECT 9
+            ) AS tens
+            JOIN (
+                SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3
+                UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7
+                UNION SELECT 8 UNION SELECT 9
+            ) AS hundreds
+            WHERE 1 + units.i + tens.i * 10 + hundreds.i * 100 <=
+            (SELECT MAX(LENGTH(lyrics) - LENGTH(REPLACE(lyrics, ' ', ''))) + 2 FROM Songs)
+            ORDER BY n
+        ) n
+    WHERE
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(concat(lyrics, ' endoflyrics'), ' ', n), ' ', -1)) != ''
+    ORDER BY
+        song_id, n
+), dummy_cleaned as (
+        SELECT DISTINCT * FROM dummy WHERE dummy.word != 'endoflyrics'
+), numbered AS (
+    SELECT ROW_NUMBER() OVER () AS song_word_id, dummy_cleaned.*
+    FROM dummy_cleaned
+)
+SELECT * FROM numbered;
+
+# Query to create SongsExpandedLarge Table
+WITH dummy AS (
+    SELECT
+        song_id,
+        artist,
+        title,
+        album,
+        year,
+        date,
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(concat(lyrics, ' endoflyrics'), ' ', n), ' ', -1)) AS word
+    FROM
+        Songs
+        CROSS JOIN (
+            SELECT 1 + units.i + tens.i * 10 + hundreds.i * 100 AS n
+            FROM (
+                SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3
+                UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7
+                UNION SELECT 8 UNION SELECT 9
+            ) AS units
+            JOIN (
+                SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3
+                UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7
+                UNION SELECT 8 UNION SELECT 9
+            ) AS tens
+            JOIN (
+                SELECT 0 AS i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3
+                UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7
+                UNION SELECT 8 UNION SELECT 9
+            ) AS hundreds
+            WHERE 1 + units.i + tens.i * 10 + hundreds.i * 100 <=
+            (SELECT MAX(LENGTH(lyrics) - LENGTH(REPLACE(lyrics, ' ', ''))) + 2 FROM Songs)
+            ORDER BY n
+        ) n
+    WHERE
+        TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(concat(lyrics, ' endoflyrics'), ' ', n), ' ', -1)) != ''
+    ORDER BY
+        song_id, n
+)
+SELECT * FROM dummy WHERE dummy.word != 'endoflyrics';
+
+# query to create SongScores Table
+CREATE Table SongScores (
+    song_id INT PRIMARY KEY,
+    title VARCHAR(255),
+    artist VARCHAR(255),
+    anger_score INT,
+    anticipation_score INT,
+    disgust_score INT,
+    fear_score INT,
+    joy_score INT,
+    negative_score INT,
+    positive_score INT,
+    sadness_score INT,
+    surprise_score INT,
+    trust_score INT
+);
+
+# query to create Words Table
+CREATE TABLE Words (
+    word_id INT PRIMARY KEY,
+    word VARCHAR(255),
+    anger TINYINT,
+    anticipation TINYINT,
+    disgust TINYINT,
+    fear TINYINT,
+    joy TINYINT,
+    negative TINYINT,
+    positive TINYINT,
+    sadness TINYINT,
+    surprise TINYINT,
+    trust TINYINT
+);
+
+# Query to create Songs Table
+CREATE Table Songs (
+    song_id INT PRIMARY KEY,
+    artist VARCHAR(255),
+    title VARCHAR(255),
+    album VARCHAR(255),
+    year FLOAT,
+    date DATE,
+    lyrics TEXT
+);
+
+# Query to create SongsExpandedLarge Table
+CREATE Table SongsExpandedLarge (
+    song_word_id INT PRIMARY KEY,
+    artist VARCHAR(255),
+    title VARCHAR(255),
+    album VARCHAR(255),
+    year FLOAT,
+    date DATE,
+    song_word VARCHAR(255)
+);
+
+# Query to create SongsExpandedDistinct Table
+CREATE Table SongsExpandedDistinct (
+    song_word_id INT PRIMARY KEY,
+    artist VARCHAR(255),
+    title VARCHAR(255),
+    album VARCHAR(255),
+    year FLOAT,
+    date DATE,
+    song_word VARCHAR(255)
+);
