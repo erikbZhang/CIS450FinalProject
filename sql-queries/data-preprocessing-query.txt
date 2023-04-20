@@ -1,0 +1,23 @@
+SELECT
+    Songs.song_id,
+    Songs.title,
+    Songs.artist,
+    SUM(Words.anger) AS anger_score,
+    SUM(Words.anticipation) AS anticipation_score,
+    SUM(Words.disgust) AS disgust_score,
+    SUM(Words.fear) AS fear_score,
+    SUM(Words.joy) AS joy_score,
+    SUM(Words.negative) AS negative_score,
+    SUM(Words.positive) AS positive_score,
+    SUM(Words.sadness) AS sadness_score,
+    SUM(Words.surprise) AS surprise_score,
+    SUM(Words.trust) AS trust_score
+FROM
+    Words
+JOIN
+    Songs ON LOWER(Songs.lyrics) LIKE CONCAT('%', LOWER(Words.word), '%')
+WHERE
+    Songs.artist='Taylor Swift'
+GROUP BY
+    Songs.song_id,
+    Songs.title;

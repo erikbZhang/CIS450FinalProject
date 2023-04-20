@@ -1,0 +1,140 @@
+* This query retreives the top 5 albums that best matches the sentiment score of the user input. 
+* It uses Euclidean distance between song emotion scores and user input emotion scores because it's a common choice when measuring similarity between data sets. 
+
+********** UNOPTIMIZED **********
+- run time = 23 s
+
+WITH UserInputScores AS (
+    SELECT
+        'depression depression depression depression suicide suicide i hate living' AS user_string,
+        SUM(Words.anger) AS anger_score,
+        SUM(Words.anticipation) AS anticipation_score,
+        SUM(Words.disgust) AS disgust_score,
+        SUM(Words.fear) AS fear_score,
+        SUM(Words.joy) AS joy_score,
+        SUM(Words.negative) AS negative_score,
+        SUM(Words.positive) AS positive_score,
+        SUM(Words.sadness) AS sadness_score,
+        SUM(Words.surprise) AS surprise_score,
+        SUM(Words.trust) AS trust_score
+    FROM
+        Words
+    WHERE
+        LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+), AlbumScores AS (
+    SELECT
+        sel.album,
+        SUM(w.anger) AS anger_score,
+        SUM(w.anticipation) AS anticipation_score,
+        SUM(w.disgust) AS disgust_score,
+        SUM(w.fear) AS fear_score,
+        SUM(w.joy) AS joy_score,
+        SUM(w.negative) AS negative_score,
+        SUM(w.positive) AS positive_score,
+        SUM(w.sadness) AS sadness_score,
+        SUM(w.surprise) AS surprise_score,
+        SUM(w.trust) AS trust_score
+    FROM
+        SongsExpandedLarge sel
+        INNER JOIN Words w ON sel.song_word = w.word
+    GROUP BY
+        sel.album
+), TopAlbums AS (
+    SELECT
+        sel.album,
+        SQRT(
+            POWER(UserInputScores.anger_score - sel.anger_score, 2) +
+            POWER(UserInputScores.anticipation_score - sel.anticipation_score, 2) +
+            POWER(UserInputScores.disgust_score - sel.disgust_score, 2) +
+            POWER(UserInputScores.fear_score - sel.fear_score, 2) +
+            POWER(UserInputScores.joy_score - sel.joy_score, 2) +
+            POWER(UserInputScores.negative_score - sel.negative_score, 2) +
+            POWER(UserInputScores.positive_score - sel.positive_score, 2) +
+            POWER(UserInputScores.sadness_score - sel.sadness_score, 2) +
+            POWER(UserInputScores.surprise_score - sel.surprise_score, 2) +
+            POWER(UserInputScores.trust_score - sel.trust_score, 2)
+        ) AS distance
+    FROM
+        AlbumScores sel
+        CROSS JOIN UserInputScores
+    ORDER BY
+        distance
+    LIMIT 5
+)
+SELECT *
+FROM TopAlbums;
+
+
+********** OPTIMIZED **********
+- runtime = 199 ms
+- created index
+- created views 
+- inner joins instead of regular
+- writing sql queries on initial data to get SongScores csv file + table
+
+CREATE INDEX idx_Words_word ON Words (word);
+CREATE VIEW AlbumEmotionScores AS
+(
+  SELECT
+    s.artist,
+    s.album,
+    SUM(ss.anger_score) AS total_anger_score,
+    SUM(ss.anticipation_score) AS total_anticipation_score,
+    SUM(ss.disgust_score) AS total_disgust_score,
+    SUM(ss.fear_score) AS total_fear_score,
+    SUM(ss.joy_score) AS total_joy_score,
+    SUM(ss.negative_score) AS total_negative_score,
+    SUM(ss.positive_score) AS total_positive_score,
+    SUM(ss.sadness_score) AS total_sadness_score,
+    SUM(ss.surprise_score) AS total_surprise_score,
+    SUM(ss.trust_score) AS total_trust_score
+  FROM
+    Songs s
+    INNER JOIN SongScores ss on s.song_id = ss.song_id
+  GROUP BY
+    s.artist,
+    s.album
+);
+WITH UserInputScores AS (
+    SELECT
+        'depression depression depression depression suicide suicide i hate living' AS user_string,
+        SUM(Words.anger) AS anger_score,
+        SUM(Words.anticipation) AS anticipation_score,
+        SUM(Words.disgust) AS disgust_score,
+        SUM(Words.fear) AS fear_score,
+        SUM(Words.joy) AS joy_score,
+        SUM(Words.negative) AS negative_score,
+        SUM(Words.positive) AS positive_score,
+        SUM(Words.sadness) AS sadness_score,
+        SUM(Words.surprise) AS surprise_score,
+        SUM(Words.trust) AS trust_score
+    FROM
+        Words
+    WHERE
+        LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+), TopAlbums AS (
+    SELECT
+        ae.artist,
+        ae.album,
+        SQRT(
+            POWER(UserInputScores.anger_score - ae.total_anger_score, 2) +
+            POWER(UserInputScores.anticipation_score - ae.total_anticipation_score, 2) +
+            POWER(UserInputScores.disgust_score - ae.total_disgust_score, 2) +
+            POWER(UserInputScores.fear_score - ae.total_fear_score, 2) +
+            POWER(UserInputScores.joy_score - ae.total_joy_score, 2) +
+            POWER(UserInputScores.negative_score - ae.total_negative_score, 2) +
+            POWER(UserInputScores.positive_score - ae.total_positive_score, 2) +
+            POWER(UserInputScores.sadness_score - ae.total_sadness_score, 2) +
+            POWER(UserInputScores.surprise_score - ae.total_surprise_score, 2) +
+            POWER(UserInputScores.trust_score - ae.total_trust_score, 2)
+        ) AS distance
+    FROM
+        AlbumEmotionScores ae
+        INNER JOIN UserInputScores
+    ORDER BY
+        distance
+    LIMIT 5
+)
+SELECT *
+FROM TopAlbums;
+

@@ -9,7 +9,10 @@ app.use(cors({
 }));
 
 
-app.get('/songs_by_artist/:artist', routes.songs_by_artist);
+app.get('/match', routes.match);
+app.get('/matchAlbum', routes.matchAlbum);
+app.get('/matchArtist', routes.matchArtist);
+app.get('/misMatch', routes.misMatch);
 // We use express to define our various API endpoints and
 // provide their handlers that we implemented in routes.js
 app.get('/author/:type', routes.author);

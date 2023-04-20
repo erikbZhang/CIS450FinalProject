@@ -12,16 +12,107 @@ const connection = mysql.createConnection({
 });
 connection.connect((err) => err && console.log(err));
 
-// Route to get songs from a specific artist
-// GET /songs/:artist
-const songs_by_artist = async function(req, res) {
-  
-  const artist = req.params.artist;
+const match = async function(req, res) {
   connection.query(`
+    WITH UserInputScores AS (
+        SELECT
+            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            SUM(Words.anger) AS anger_score,
+            SUM(Words.anticipation) AS anticipation_score,
+            SUM(Words.disgust) AS disgust_score,
+            SUM(Words.fear) AS fear_score,
+            SUM(Words.joy) AS joy_score,
+            SUM(Words.negative) AS negative_score,
+            SUM(Words.positive) AS positive_score,
+            SUM(Words.sadness) AS sadness_score,
+            SUM(Words.surprise) AS surprise_score,
+            SUM(Words.trust) AS trust_score
+        FROM
+            Words
+        WHERE
+            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+    ), TopSongs AS (
+        SELECT
+            se.artist,
+            se.title,
+            se.album,
+            se.year,
+            se.date,
+            SQRT(
+                POWER(UserInputScores.anger_score - se.anger_score, 2) +
+                POWER(UserInputScores.anticipation_score - se.anticipation_score, 2) +
+                POWER(UserInputScores.disgust_score - se.disgust_score, 2) +
+                POWER(UserInputScores.fear_score - se.fear_score, 2) +
+                POWER(UserInputScores.joy_score - se.joy_score, 2) +
+                POWER(UserInputScores.negative_score - se.negative_score, 2) +
+                POWER(UserInputScores.positive_score - se.positive_score, 2) +
+                POWER(UserInputScores.sadness_score - se.sadness_score, 2) +
+                POWER(UserInputScores.surprise_score - se.surprise_score, 2) +
+                POWER(UserInputScores.trust_score - se.trust_score, 2)
+            ) AS distance
+        FROM
+            SongEmotionScores se
+            INNER JOIN UserInputScores
+        ORDER BY
+            distance
+        LIMIT 10
+    )
     SELECT *
-    FROM Songs
-    WHERE artist = '${artist}'
-    LIMIT 5
+    FROM TopSongs;
+  `, (err, data) => {
+    if (err || data.length === 0) {
+      console.log(err);
+      res.json({});
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+const matchAlbum = async function(req, res) {
+  connection.query(`
+    WITH UserInputScores AS (
+        SELECT
+            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            SUM(Words.anger) AS anger_score,
+            SUM(Words.anticipation) AS anticipation_score,
+            SUM(Words.disgust) AS disgust_score,
+            SUM(Words.fear) AS fear_score,
+            SUM(Words.joy) AS joy_score,
+            SUM(Words.negative) AS negative_score,
+            SUM(Words.positive) AS positive_score,
+            SUM(Words.sadness) AS sadness_score,
+            SUM(Words.surprise) AS surprise_score,
+            SUM(Words.trust) AS trust_score
+        FROM
+            Words
+        WHERE
+            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+    ), TopAlbums AS (
+        SELECT
+            ae.artist,
+            ae.album,
+            SQRT(
+                POWER(UserInputScores.anger_score - ae.total_anger_score, 2) +
+                POWER(UserInputScores.anticipation_score - ae.total_anticipation_score, 2) +
+                POWER(UserInputScores.disgust_score - ae.total_disgust_score, 2) +
+                POWER(UserInputScores.fear_score - ae.total_fear_score, 2) +
+                POWER(UserInputScores.joy_score - ae.total_joy_score, 2) +
+                POWER(UserInputScores.negative_score - ae.total_negative_score, 2) +
+                POWER(UserInputScores.positive_score - ae.total_positive_score, 2) +
+                POWER(UserInputScores.sadness_score - ae.total_sadness_score, 2) +
+                POWER(UserInputScores.surprise_score - ae.total_surprise_score, 2) +
+                POWER(UserInputScores.trust_score - ae.total_trust_score, 2)
+            ) AS distance
+        FROM
+            AlbumEmotionScores ae
+            INNER JOIN UserInputScores
+        ORDER BY
+            distance
+        LIMIT 5
+    )
+    SELECT *
+    FROM TopAlbums;
   `, (err, data) => {
     if (err || data.length === 0) {
       // if there is an error for some reason, or if the query is empty (this should not be possible)
@@ -33,6 +124,117 @@ const songs_by_artist = async function(req, res) {
       // being song_id and title which you will add. In this case, there is only one song
       // so we just directly access the first element of the query results array (data)
       // TODO (TASK 3): also return the song title in the response
+      res.json(data);
+    }
+  });
+}
+
+const matchArtist = async function(req, res) {
+  connection.query(`
+    WITH UserInputScores AS (
+        SELECT
+            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            SUM(Words.anger) AS anger_score,
+            SUM(Words.anticipation) AS anticipation_score,
+            SUM(Words.disgust) AS disgust_score,
+            SUM(Words.fear) AS fear_score,
+            SUM(Words.joy) AS joy_score,
+            SUM(Words.negative) AS negative_score,
+            SUM(Words.positive) AS positive_score,
+            SUM(Words.sadness) AS sadness_score,
+            SUM(Words.surprise) AS surprise_score,
+            SUM(Words.trust) AS trust_score
+        FROM
+            Words
+        WHERE
+            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+    ), TopArtists AS (
+        SELECT
+            ae.artist,
+            SQRT(
+                POWER(UserInputScores.anger_score - ae.total_anger_score, 2) +
+                POWER(UserInputScores.anticipation_score - ae.total_anticipation_score, 2) +
+                POWER(UserInputScores.disgust_score - ae.total_disgust_score, 2) +
+                POWER(UserInputScores.fear_score - ae.total_fear_score, 2) +
+                POWER(UserInputScores.joy_score - ae.total_joy_score, 2) +
+                POWER(UserInputScores.negative_score - ae.total_negative_score, 2) +
+                POWER(UserInputScores.positive_score - ae.total_positive_score, 2) +
+                POWER(UserInputScores.sadness_score - ae.total_sadness_score, 2) +
+                POWER(UserInputScores.surprise_score - ae.total_surprise_score, 2) +
+                POWER(UserInputScores.trust_score - ae.total_trust_score, 2)
+            ) AS distance
+        FROM
+            ArtistEmotionScores ae
+            INNER JOIN UserInputScores
+        ORDER BY
+            distance
+        LIMIT 5
+    )
+    SELECT *
+    FROM TopArtists;
+  `, (err, data) => {
+    if (err || data.length === 0) {
+      console.log(err);
+      res.json({});
+    } else {
+      res.json(data);
+    }
+  });
+}
+
+const misMatch = async function(req, res) {
+  connection.query(`
+    WITH UserInputScores AS (
+        SELECT
+            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            SUM(Words.anger) AS anger_score,
+            SUM(Words.anticipation) AS anticipation_score,
+            SUM(Words.disgust) AS disgust_score,
+            SUM(Words.fear) AS fear_score,
+            SUM(Words.joy) AS joy_score,
+            SUM(Words.negative) AS negative_score,
+            SUM(Words.positive) AS positive_score,
+            SUM(Words.sadness) AS sadness_score,
+            SUM(Words.surprise) AS surprise_score,
+            SUM(Words.trust) AS trust_score
+        FROM
+            Words
+        WHERE
+            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+    ), TopSongs AS (
+        SELECT
+            se.artist,
+            se.title,
+            se.album,
+            se.year,
+            se.date,
+            SQRT(
+                POWER(UserInputScores.anger_score - se.anger_score, 2) +
+                POWER(UserInputScores.anticipation_score - se.anticipation_score, 2) +
+                POWER(UserInputScores.disgust_score - se.disgust_score, 2) +
+                POWER(UserInputScores.fear_score - se.fear_score, 2) +
+                POWER(UserInputScores.joy_score - se.joy_score, 2) +
+                POWER(UserInputScores.negative_score - se.negative_score, 2) +
+                POWER(UserInputScores.positive_score - se.positive_score, 2) +
+                POWER(UserInputScores.sadness_score - se.sadness_score, 2) +
+                POWER(UserInputScores.surprise_score - se.surprise_score, 2) +
+                POWER(UserInputScores.trust_score - se.trust_score, 2)
+            ) AS distance
+        FROM
+            SongEmotionScores se
+            INNER JOIN UserInputScores
+        WHERE se.title NOT LIKE '%Notes%' AND se.title NOT LIKE '%Script%'
+        ORDER BY
+            distance DESC
+        LIMIT 10
+    )
+    SELECT *
+    FROM TopSongs;
+  `, (err, data) => {
+    if (err || data.length === 0) {
+      console.log(err);
+      res.json({});
+    } else {
       res.json(data);
     }
   });
@@ -324,5 +526,8 @@ module.exports = {
   top_songs,
   top_albums,
   search_songs,
-  songs_by_artist
+  match,
+  matchAlbum, 
+  matchArtist, 
+  misMatch
 }
