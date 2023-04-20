@@ -1,0 +1,18 @@
+* This query takes in as a route parameter one of the 10 emotions and retreives the top 10 songs in the database for that emotion.
+* Calculated by seeing which songs specificed emotion_score is greater than the average of all 10 emotion scores for that song. 
+
+
+* this example only takes in the joy. 
+SELECT s.song_id, s.title, s.artist, s.album, s.year, s.date, ss.joy_score
+FROM Songs s
+JOIN (
+  SELECT song_id,
+         (anger_score + anticipation_score + disgust_score + fear_score +
+          negative_score + positive_score + sadness_score + surprise_score +
+          trust_score + joy_score) / 10 AS avg_score,
+         joy_score
+  FROM SongScores
+) ss ON s.song_id = ss.song_id
+WHERE ss.joy_score > ss.avg_score
+ORDER BY ss.joy_score DESC
+LIMIT 10;
