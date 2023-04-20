@@ -1,0 +1,6 @@
+* This query gives the emotion scores for a song specified by the user 
+
+SELECT artist, title, anger_score, anticipation_score, disgust_score, fear_score, joy_score,
+       negative_score, positive_score, sadness_score, surprise_score, trust_score
+FROM SongScores
+WHERE title='Rap God'

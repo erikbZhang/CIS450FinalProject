@@ -1,0 +1,19 @@
+* This query gives the emotion scores for an artist specified by the user 
+
+WITH ArtistAvgScore AS (
+    SELECT s.artist,
+           AVG(ss.anger_score) AS avg_anger_score,
+           AVG(ss.anticipation_score) AS avg_anticipation_score,
+           AVG(ss.disgust_score) AS avg_disgust_score,
+           AVG(ss.fear_score) AS avg_fear_score,
+           AVG(ss.joy_score) AS avg_joy_score,
+           AVG(ss.negative_score) AS avg_negative_score,
+           AVG(ss.positive_score) AS avg_positive_score,
+           AVG(ss.sadness_score) AS avg_sadness_score,
+           AVG(ss.surprise_score) AS avg_surprise_score,
+           AVG(ss.trust_score) AS avg_trust_score
+    FROM Songs s
+    JOIN SongScores ss ON s.song_id = ss.song_id
+    GROUP BY s.artist
+)
+SELECT * FROM ArtistAvgScore WHERE artist='Eminem'
