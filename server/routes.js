@@ -126,7 +126,7 @@ const matchAlbum = async function(req, res) {
 }
 
 const matchArtist = async function(req, res) {
-  const user_input_string = 'happy happy energy excited future love love';
+  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
   connection.query(`
     WITH UserInputScores AS (
         SELECT
