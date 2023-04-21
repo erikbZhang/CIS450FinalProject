@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 connection.connect((err) => err && console.log(err));
 
 const match = async function(req, res) {
-  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
+  const user_input_string = 'love love love i am so happy so excited so grateful';
   connection.query(`
     WITH UserInputScores AS (
         SELECT
@@ -85,32 +85,67 @@ const matchAlbum = async function(req, res) {
             SUM(Words.positive) AS positive_score,
             SUM(Words.sadness) AS sadness_score,
             SUM(Words.surprise) AS surprise_score,
-            SUM(Words.trust) AS trust_score
+            SUM(Words.trust) AS trust_score,
+            SQRT(
+                POWER(SUM(Words.anger), 2) +
+                POWER(SUM(Words.anticipation), 2) +
+                POWER(SUM(Words.disgust), 2) +
+                POWER(SUM(Words.fear), 2) +
+                POWER(SUM(Words.joy), 2) +
+                POWER(SUM(Words.negative), 2) +
+                POWER(SUM(Words.positive), 2) +
+                POWER(SUM(Words.sadness), 2) +
+                POWER(SUM(Words.surprise), 2) +
+                POWER(SUM(Words.trust), 2)
+            ) AS input_score_norm
         FROM
             Words
         WHERE
             LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
-    ), TopAlbums AS (
+    ), AlbumScores AS (
         SELECT
             ae.artist,
             ae.album,
+            ae.total_anger_score,
+            ae.total_anticipation_score,
+            ae.total_disgust_score,
+            ae.total_fear_score,
+            ae.total_joy_score,
+            ae.total_negative_score,
+            ae.total_positive_score,
+            ae.total_sadness_score,
+            ae.total_surprise_score,
+            ae.total_trust_score,
             SQRT(
-                POWER(UserInputScores.anger_score - ae.total_anger_score, 2) +
-                POWER(UserInputScores.anticipation_score - ae.total_anticipation_score, 2) +
-                POWER(UserInputScores.disgust_score - ae.total_disgust_score, 2) +
-                POWER(UserInputScores.fear_score - ae.total_fear_score, 2) +
-                POWER(UserInputScores.joy_score - ae.total_joy_score, 2) +
-                POWER(UserInputScores.negative_score - ae.total_negative_score, 2) +
-                POWER(UserInputScores.positive_score - ae.total_positive_score, 2) +
-                POWER(UserInputScores.sadness_score - ae.total_sadness_score, 2) +
-                POWER(UserInputScores.surprise_score - ae.total_surprise_score, 2) +
-                POWER(UserInputScores.trust_score - ae.total_trust_score, 2)
-            ) AS distance
+                POWER(ae.total_anger_score, 2) +
+                POWER(ae.total_anticipation_score, 2) +
+                POWER(ae.total_disgust_score, 2) +
+                POWER(ae.total_fear_score, 2) +
+                POWER(ae.total_joy_score, 2) +
+                POWER(ae.total_negative_score, 2) +
+                POWER(ae.total_positive_score, 2) +
+                POWER(ae.total_sadness_score, 2) +
+                POWER(ae.total_surprise_score, 2) +
+                POWER(ae.total_trust_score, 2)
+            ) AS album_score_norm
         FROM
             AlbumEmotionScores ae
-            INNER JOIN UserInputScores
+    ), TopAlbums AS (
+        SELECT
+            ascores.artist,
+            ascores.album,
+            SUM(UserInputScores.anger_score * ascores.total_anger_score)
+                / (UserInputScores.input_score_norm * ascores.album_score_norm) AS cosine_similarity
+        FROM
+            UserInputScores,
+            AlbumScores ascores
+        GROUP BY
+            ascores.artist,
+            ascores.album,
+            UserInputScores.input_score_norm,
+            ascores.album_score_norm
         ORDER BY
-            distance
+            cosine_similarity DESC
         LIMIT 5
     )
     SELECT *
@@ -128,47 +163,63 @@ const matchAlbum = async function(req, res) {
 const matchArtist = async function(req, res) {
   const user_input_string = 'depression depression depression depression suicide suicide i hate living';
   connection.query(`
-    WITH UserInputScores AS (
-        SELECT
-            '${user_input_string}' AS user_string,
-            SUM(Words.anger) AS anger_score,
-            SUM(Words.anticipation) AS anticipation_score,
-            SUM(Words.disgust) AS disgust_score,
-            SUM(Words.fear) AS fear_score,
-            SUM(Words.joy) AS joy_score,
-            SUM(Words.negative) AS negative_score,
-            SUM(Words.positive) AS positive_score,
-            SUM(Words.sadness) AS sadness_score,
-            SUM(Words.surprise) AS surprise_score,
-            SUM(Words.trust) AS trust_score
-        FROM
-            Words
-        WHERE
-            LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
-    ), TopArtists AS (
-        SELECT
-            ae.artist,
-            SQRT(
-                POWER(UserInputScores.anger_score - ae.total_anger_score/1000, 2) +
-                POWER(UserInputScores.anticipation_score - ae.total_anticipation_score/1000, 2) +
-                POWER(UserInputScores.disgust_score - ae.total_disgust_score/1000, 2) +
-                POWER(UserInputScores.fear_score - ae.total_fear_score/1000, 2) +
-                POWER(UserInputScores.joy_score - ae.total_joy_score/1000, 2) +
-                POWER(UserInputScores.negative_score - ae.total_negative_score/1000, 2) +
-                POWER(UserInputScores.positive_score - ae.total_positive_score/1000, 2) +
-                POWER(UserInputScores.sadness_score - ae.total_sadness_score/1000, 2) +
-                POWER(UserInputScores.surprise_score - ae.total_surprise_score/1000, 2) +
-                POWER(UserInputScores.trust_score - ae.total_trust_score/1000, 2)
-            ) AS distance
-        FROM
-            ArtistEmotionScores ae
-            INNER JOIN UserInputScores
-        ORDER BY
-            distance
-        LIMIT 5
+  WITH UserInputScores AS (
+    SELECT
+      '${user_input_string}' AS user_string,
+      SUM(Words.anger) AS anger_score,
+      SUM(Words.anticipation) AS anticipation_score,
+      SUM(Words.disgust) AS disgust_score,
+      SUM(Words.fear) AS fear_score,
+      SUM(Words.joy) AS joy_score,
+      SUM(Words.negative) AS negative_score,
+      SUM(Words.positive) AS positive_score,
+      SUM(Words.sadness) AS sadness_score,
+      SUM(Words.surprise) AS surprise_score,
+      SUM(Words.trust) AS trust_score
+    FROM
+      Words
+    WHERE
+      LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
+  ), TopArtists AS (
+    SELECT
+      ae.artist,
+      SQRT(
+        POWER(IFNULL(InputScores.anger_score, 0) - ae.total_anger_score/1000, 2) +
+        POWER(IFNULL(InputScores.anticipation_score, 0) - ae.total_anticipation_score/1000, 2) +
+        POWER(IFNULL(InputScores.disgust_score, 0) - ae.total_disgust_score/1000, 2) +
+        POWER(IFNULL(InputScores.fear_score, 0) - ae.total_fear_score/1000, 2) +
+        POWER(IFNULL(InputScores.joy_score, 0) - ae.total_joy_score/1000, 2) +
+        POWER(IFNULL(InputScores.negative_score, 0) - ae.total_negative_score/1000, 2) +
+        POWER(IFNULL(InputScores.positive_score, 0) - ae.total_positive_score/1000, 2) +
+        POWER(IFNULL(InputScores.sadness_score, 0) - ae.total_sadness_score/1000, 2) +
+        POWER(IFNULL(InputScores.surprise_score, 0) - ae.total_surprise_score/1000, 2) +
+        POWER(IFNULL(InputScores.trust_score, 0) - ae.total_trust_score/1000, 2)
+      ) AS distance
+    FROM
+      ArtistEmotionScores ae
+      LEFT JOIN UserInputScores InputScores ON 1=1
+    WHERE EXISTS (
+      SELECT 1
+      FROM ArtistEmotionScores
+      WHERE artist = ae.artist AND (
+        total_anger_score > 0 OR
+        total_anticipation_score > 0 OR
+        total_disgust_score > 0 OR
+        total_fear_score > 0 OR
+        total_joy_score > 0 OR
+        total_negative_score > 0 OR
+        total_positive_score > 0 OR
+        total_sadness_score > 0 OR
+        total_surprise_score > 0 OR
+        total_trust_score > 0
+      )
     )
-    SELECT *
-    FROM TopArtists;
+    ORDER BY
+      distance
+    LIMIT 5
+  )
+  SELECT *
+  FROM TopArtists;
   `, (err, data) => {
     if (err || data.length === 0) {
       console.log(err);
@@ -180,25 +231,29 @@ const matchArtist = async function(req, res) {
 }
 
 const misMatch = async function(req, res) {
-  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
+  const user_input_string = 'fuck fuck kill myself hate living so depressed and anxious';
   connection.query(`
-    WITH UserInputScores AS (
+    WITH UserInput AS (
         SELECT
-            '${user_input_string}' AS user_string,
-            SUM(Words.anger) AS anger_score,
-            SUM(Words.anticipation) AS anticipation_score,
-            SUM(Words.disgust) AS disgust_score,
-            SUM(Words.fear) AS fear_score,
-            SUM(Words.joy) AS joy_score,
-            SUM(Words.negative) AS negative_score,
-            SUM(Words.positive) AS positive_score,
-            SUM(Words.sadness) AS sadness_score,
-            SUM(Words.surprise) AS surprise_score,
-            SUM(Words.trust) AS trust_score
+            '${user_input_string}' AS user_string
+    ), UserInputScores AS (
+        SELECT
+            UserInput.user_string,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.anger ELSE 0 END) AS anger_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.anticipation ELSE 0 END) AS anticipation_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.disgust ELSE 0 END) AS disgust_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.fear ELSE 0 END) AS fear_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.joy ELSE 0 END) AS joy_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.negative ELSE 0 END) AS negative_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.positive ELSE 0 END) AS positive_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.sadness ELSE 0 END) AS sadness_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.surprise ELSE 0 END) AS surprise_score,
+            SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.trust ELSE 0 END) AS trust_score
         FROM
-            Words
+            UserInput
+            CROSS JOIN Words
         WHERE
-            LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
+            EXISTS (SELECT 1 FROM Words WHERE LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%'))
     ), TopSongs AS (
         SELECT
             se.artist,
@@ -206,18 +261,16 @@ const misMatch = async function(req, res) {
             se.album,
             se.year,
             se.date,
-            SQRT(
-                POWER(UserInputScores.anger_score - se.anger_score, 2) +
-                POWER(UserInputScores.anticipation_score - se.anticipation_score, 2) +
-                POWER(UserInputScores.disgust_score - se.disgust_score, 2) +
-                POWER(UserInputScores.fear_score - se.fear_score, 2) +
-                POWER(UserInputScores.joy_score - se.joy_score, 2) +
-                POWER(UserInputScores.negative_score - se.negative_score, 2) +
-                POWER(UserInputScores.positive_score - se.positive_score, 2) +
-                POWER(UserInputScores.sadness_score - se.sadness_score, 2) +
-                POWER(UserInputScores.surprise_score - se.surprise_score, 2) +
-                POWER(UserInputScores.trust_score - se.trust_score, 2)
-            ) AS distance
+            ABS(UserInputScores.anger_score - se.anger_score) +
+            ABS(UserInputScores.anticipation_score - se.anticipation_score) +
+            ABS(UserInputScores.disgust_score - se.disgust_score) +
+            ABS(UserInputScores.fear_score - se.fear_score) +
+            ABS(UserInputScores.joy_score - se.joy_score) +
+            ABS(UserInputScores.negative_score - se.negative_score) +
+            ABS(UserInputScores.positive_score - se.positive_score) +
+            ABS(UserInputScores.sadness_score - se.sadness_score) +
+            ABS(UserInputScores.surprise_score - se.surprise_score) +
+            ABS(UserInputScores.trust_score - se.trust_score) AS distance
         FROM
             SongEmotionScores se
             INNER JOIN UserInputScores

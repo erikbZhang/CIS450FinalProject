@@ -1,5 +1,5 @@
 * This query retreives the top 5 albums that best matches the sentiment score of the user input. 
-* It uses Euclidean distance between song emotion scores and user input emotion scores because it's a common choice when measuring similarity between data sets. 
+* It uses cosine similarity between song emotion scores and user input emotion scores because it's a common choice when measuring similarity between data sets. 
 
 ********** UNOPTIMIZED **********
 - run time = 23 s
@@ -67,13 +67,14 @@ FROM TopAlbums;
 
 ********** OPTIMIZED **********
 - runtime = 199 ms
-- created index
+- created 2 indices
+- created materialized views instead of regular views
 - created views 
 - inner joins instead of regular
-- writing sql queries on initial data to get SongScores csv file + table
 
 CREATE INDEX idx_Words_word ON Words (word);
-CREATE VIEW AlbumEmotionScores AS
+CREATE INDEX idx_Songs_album ON Songs (album);
+CREATE MATERIALIZED VIEW AlbumEmotionScores AS
 (
   SELECT
     s.artist,
@@ -107,32 +108,67 @@ WITH UserInputScores AS (
         SUM(Words.positive) AS positive_score,
         SUM(Words.sadness) AS sadness_score,
         SUM(Words.surprise) AS surprise_score,
-        SUM(Words.trust) AS trust_score
+        SUM(Words.trust) AS trust_score,
+        SQRT(
+            POWER(SUM(Words.anger), 2) +
+            POWER(SUM(Words.anticipation), 2) +
+            POWER(SUM(Words.disgust), 2) +
+            POWER(SUM(Words.fear), 2) +
+            POWER(SUM(Words.joy), 2) +
+            POWER(SUM(Words.negative), 2) +
+            POWER(SUM(Words.positive), 2) +
+            POWER(SUM(Words.sadness), 2) +
+            POWER(SUM(Words.surprise), 2) +
+            POWER(SUM(Words.trust), 2)
+        ) AS input_score_norm
     FROM
         Words
     WHERE
         LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
-), TopAlbums AS (
+), AlbumScores AS (
     SELECT
         ae.artist,
         ae.album,
+        ae.total_anger_score,
+        ae.total_anticipation_score,
+        ae.total_disgust_score,
+        ae.total_fear_score,
+        ae.total_joy_score,
+        ae.total_negative_score,
+        ae.total_positive_score,
+        ae.total_sadness_score,
+        ae.total_surprise_score,
+        ae.total_trust_score,
         SQRT(
-            POWER(UserInputScores.anger_score - ae.total_anger_score, 2) +
-            POWER(UserInputScores.anticipation_score - ae.total_anticipation_score, 2) +
-            POWER(UserInputScores.disgust_score - ae.total_disgust_score, 2) +
-            POWER(UserInputScores.fear_score - ae.total_fear_score, 2) +
-            POWER(UserInputScores.joy_score - ae.total_joy_score, 2) +
-            POWER(UserInputScores.negative_score - ae.total_negative_score, 2) +
-            POWER(UserInputScores.positive_score - ae.total_positive_score, 2) +
-            POWER(UserInputScores.sadness_score - ae.total_sadness_score, 2) +
-            POWER(UserInputScores.surprise_score - ae.total_surprise_score, 2) +
-            POWER(UserInputScores.trust_score - ae.total_trust_score, 2)
-        ) AS distance
+            POWER(ae.total_anger_score, 2) +
+            POWER(ae.total_anticipation_score, 2) +
+            POWER(ae.total_disgust_score, 2) +
+            POWER(ae.total_fear_score, 2) +
+            POWER(ae.total_joy_score, 2) +
+            POWER(ae.total_negative_score, 2) +
+            POWER(ae.total_positive_score, 2) +
+            POWER(ae.total_sadness_score, 2) +
+            POWER(ae.total_surprise_score, 2) +
+            POWER(ae.total_trust_score, 2)
+        ) AS album_score_norm
     FROM
         AlbumEmotionScores ae
-        INNER JOIN UserInputScores
+), TopAlbums AS (
+    SELECT
+        ascores.artist,
+        ascores.album,
+        SUM(UserInputScores.anger_score * ascores.total_anger_score)
+            / (UserInputScores.input_score_norm * ascores.album_score_norm) AS cosine_similarity
+    FROM
+        UserInputScores,
+        AlbumScores ascores
+    GROUP BY
+        ascores.artist,
+        ascores.album,
+        UserInputScores.input_score_norm,
+        ascores.album_score_norm
     ORDER BY
-        distance
+        cosine_similarity DESC
     LIMIT 5
 )
 SELECT *

@@ -1,5 +1,5 @@
 * This query retreives the top 5 artists that best matches the sentiment score of the user input. 
-* It uses Euclidean distance between song emotion scores and user input emotion scores because it's a common choice when measuring similarity between data sets. 
+* It uses Pearson Coefficient between song emotion scores and user input emotion scores because it's a common choice when measuring similarity between data sets. 
 
 ********** UNOPTIMIZED **********
 - run time = 24 s
@@ -65,68 +65,82 @@ SELECT *
 FROM TopArtists;
 
 ********** OPTIMIZED **********
-- index
-- views
 
 CREATE INDEX idx_Words_word ON Words (word);
 CREATE VIEW ArtistEmotionScores AS
 (
   SELECT
     s.artist,
-    SUM(ss.anger_score) AS total_anger_score,
-    SUM(ss.anticipation_score) AS total_anticipation_score,
-    SUM(ss.disgust_score) AS total_disgust_score,
-    SUM(ss.fear_score) AS total_fear_score,
-    SUM(ss.joy_score) AS total_joy_score,
-    SUM(ss.negative_score) AS total_negative_score,
-    SUM(ss.positive_score) AS total_positive_score,
-    SUM(ss.sadness_score) AS total_sadness_score,
-    SUM(ss.surprise_score) AS total_surprise_score,
-    SUM(ss.trust_score) AS total_trust_score
+    (SELECT SUM(ss.anger_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_anger_score,
+    (SELECT SUM(ss.anticipation_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_anticipation_score,
+    (SELECT SUM(ss.disgust_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_disgust_score,
+    (SELECT SUM(ss.fear_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_fear_score,
+    (SELECT SUM(ss.joy_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_joy_score,
+    (SELECT SUM(ss.negative_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_negative_score,
+    (SELECT SUM(ss.positive_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_positive_score,
+    (SELECT SUM(ss.sadness_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_sadness_score,
+    (SELECT SUM(ss.surprise_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_surprise_score,
+    (SELECT SUM(ss.trust_score) FROM SongScores ss WHERE ss.song_id IN (SELECT song_id FROM Songs WHERE artist = s.artist)) AS total_trust_score
   FROM
     Songs s
-    INNER JOIN SongScores ss on s.song_id = ss.song_id
   GROUP BY
     s.artist
 );
+
 WITH UserInputScores AS (
-    SELECT
-        'depression depression depression depression suicide suicide i hate living' AS user_string,
-        SUM(Words.anger) AS anger_score,
-        SUM(Words.anticipation) AS anticipation_score,
-        SUM(Words.disgust) AS disgust_score,
-        SUM(Words.fear) AS fear_score,
-        SUM(Words.joy) AS joy_score,
-        SUM(Words.negative) AS negative_score,
-        SUM(Words.positive) AS positive_score,
-        SUM(Words.sadness) AS sadness_score,
-        SUM(Words.surprise) AS surprise_score,
-        SUM(Words.trust) AS trust_score
-    FROM
-        Words
-    WHERE
-        LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+  SELECT
+    'depression depression depression depression suicide suicide i hate living' AS user_string,
+    SUM(Words.anger) AS anger_score,
+    SUM(Words.anticipation) AS anticipation_score,
+    SUM(Words.disgust) AS disgust_score,
+    SUM(Words.fear) AS fear_score,
+    SUM(Words.joy) AS joy_score,
+    SUM(Words.negative) AS negative_score,
+    SUM(Words.positive) AS positive_score,
+    SUM(Words.sadness) AS sadness_score,
+    SUM(Words.surprise) AS surprise_score,
+    SUM(Words.trust) AS trust_score
+  FROM
+    Words
+  WHERE
+    LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
 ), TopArtists AS (
-    SELECT
-        ae.artist,
-        SQRT(
-            POWER(UserInputScores.anger_score - ae.total_anger_score/1000, 2) +
-            POWER(UserInputScores.anticipation_score - ae.total_anticipation_score/1000, 2) +
-            POWER(UserInputScores.disgust_score - ae.total_disgust_score/1000, 2) +
-            POWER(UserInputScores.fear_score - ae.total_fear_score/1000, 2) +
-            POWER(UserInputScores.joy_score - ae.total_joy_score/1000, 2) +
-            POWER(UserInputScores.negative_score - ae.total_negative_score/1000, 2) +
-            POWER(UserInputScores.positive_score - ae.total_positive_score/1000, 2) +
-            POWER(UserInputScores.sadness_score - ae.total_sadness_score/1000, 2) +
-            POWER(UserInputScores.surprise_score - ae.total_surprise_score/1000, 2) +
-            POWER(UserInputScores.trust_score - ae.total_trust_score/1000, 2)
-        ) AS distance
-    FROM
-        ArtistEmotionScores ae
-        INNER JOIN UserInputScores
-    ORDER BY
-        distance
-    LIMIT 5
+  SELECT
+    ae.artist,
+    SQRT(
+      POWER(IFNULL(InputScores.anger_score, 0) - ae.total_anger_score/1000, 2) +
+      POWER(IFNULL(InputScores.anticipation_score, 0) - ae.total_anticipation_score/1000, 2) +
+      POWER(IFNULL(InputScores.disgust_score, 0) - ae.total_disgust_score/1000, 2) +
+      POWER(IFNULL(InputScores.fear_score, 0) - ae.total_fear_score/1000, 2) +
+      POWER(IFNULL(InputScores.joy_score, 0) - ae.total_joy_score/1000, 2) +
+      POWER(IFNULL(InputScores.negative_score, 0) - ae.total_negative_score/1000, 2) +
+      POWER(IFNULL(InputScores.positive_score, 0) - ae.total_positive_score/1000, 2) +
+      POWER(IFNULL(InputScores.sadness_score, 0) - ae.total_sadness_score/1000, 2) +
+      POWER(IFNULL(InputScores.surprise_score, 0) - ae.total_surprise_score/1000, 2) +
+      POWER(IFNULL(InputScores.trust_score, 0) - ae.total_trust_score/1000, 2)
+    ) AS distance
+  FROM
+    ArtistEmotionScores ae
+    LEFT JOIN UserInputScores InputScores ON 1=1
+  WHERE EXISTS (
+    SELECT 1
+    FROM ArtistEmotionScores
+    WHERE artist = ae.artist AND (
+      total_anger_score > 0 OR
+      total_anticipation_score > 0 OR
+      total_disgust_score > 0 OR
+      total_fear_score > 0 OR
+      total_joy_score > 0 OR
+      total_negative_score > 0 OR
+      total_positive_score > 0 OR
+      total_sadness_score > 0 OR
+      total_surprise_score > 0 OR
+      total_trust_score > 0
+    )
+  )
+  ORDER BY
+    distance
+  LIMIT 5
 )
 SELECT *
 FROM TopArtists;

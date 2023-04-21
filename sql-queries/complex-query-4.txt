@@ -100,27 +100,31 @@ SELECT Songs.artist,
        SongScores.sadness_score,
        SongScores.surprise_score,
        SongScores.trust_score
-FROM Songs
-         JOIN
-     SongScores ON Songs.song_id = SongScores.song_id
+FROM Songs, SongScores
+    WHERE 
+        Songs.song_id = SongScores.song_id
 );
-WITH UserInputScores AS (
+WITH UserInput AS (
     SELECT
-        'depression depression depression depression suicide suicide i hate living' AS user_string,
-        SUM(Words.anger) AS anger_score,
-        SUM(Words.anticipation) AS anticipation_score,
-        SUM(Words.disgust) AS disgust_score,
-        SUM(Words.fear) AS fear_score,
-        SUM(Words.joy) AS joy_score,
-        SUM(Words.negative) AS negative_score,
-        SUM(Words.positive) AS positive_score,
-        SUM(Words.sadness) AS sadness_score,
-        SUM(Words.surprise) AS surprise_score,
-        SUM(Words.trust) AS trust_score
+        'depression depression depression depression suicide suicide i hate living' AS user_string
+), UserInputScores AS (
+    SELECT
+        UserInput.user_string,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.anger ELSE 0 END) AS anger_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.anticipation ELSE 0 END) AS anticipation_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.disgust ELSE 0 END) AS disgust_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.fear ELSE 0 END) AS fear_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.joy ELSE 0 END) AS joy_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.negative ELSE 0 END) AS negative_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.positive ELSE 0 END) AS positive_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.sadness ELSE 0 END) AS sadness_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.surprise ELSE 0 END) AS surprise_score,
+        SUM(CASE WHEN LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%') THEN Words.trust ELSE 0 END) AS trust_score
     FROM
-        Words
+        UserInput
+        CROSS JOIN Words
     WHERE
-        LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+        EXISTS (SELECT 1 FROM Words WHERE LOWER(UserInput.user_string) LIKE CONCAT('%', LOWER(Words.word), '%'))
 ), TopSongs AS (
     SELECT
         se.artist,
@@ -128,18 +132,16 @@ WITH UserInputScores AS (
         se.album,
         se.year,
         se.date,
-        SQRT(
-            POWER(UserInputScores.anger_score - se.anger_score, 2) +
-            POWER(UserInputScores.anticipation_score - se.anticipation_score, 2) +
-            POWER(UserInputScores.disgust_score - se.disgust_score, 2) +
-            POWER(UserInputScores.fear_score - se.fear_score, 2) +
-            POWER(UserInputScores.joy_score - se.joy_score, 2) +
-            POWER(UserInputScores.negative_score - se.negative_score, 2) +
-            POWER(UserInputScores.positive_score - se.positive_score, 2) +
-            POWER(UserInputScores.sadness_score - se.sadness_score, 2) +
-            POWER(UserInputScores.surprise_score - se.surprise_score, 2) +
-            POWER(UserInputScores.trust_score - se.trust_score, 2)
-        ) AS distance
+        ABS(UserInputScores.anger_score - se.anger_score) +
+        ABS(UserInputScores.anticipation_score - se.anticipation_score) +
+        ABS(UserInputScores.disgust_score - se.disgust_score) +
+        ABS(UserInputScores.fear_score - se.fear_score) +
+        ABS(UserInputScores.joy_score - se.joy_score) +
+        ABS(UserInputScores.negative_score - se.negative_score) +
+        ABS(UserInputScores.positive_score - se.positive_score) +
+        ABS(UserInputScores.sadness_score - se.sadness_score) +
+        ABS(UserInputScores.surprise_score - se.surprise_score) +
+        ABS(UserInputScores.trust_score - se.trust_score) AS distance
     FROM
         SongEmotionScores se
         INNER JOIN UserInputScores
