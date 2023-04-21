@@ -13,10 +13,11 @@ const connection = mysql.createConnection({
 connection.connect((err) => err && console.log(err));
 
 const match = async function(req, res) {
+  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
   connection.query(`
     WITH UserInputScores AS (
         SELECT
-            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            '${user_input_string}' AS user_string,
             SUM(Words.anger) AS anger_score,
             SUM(Words.anticipation) AS anticipation_score,
             SUM(Words.disgust) AS disgust_score,
@@ -30,7 +31,7 @@ const match = async function(req, res) {
         FROM
             Words
         WHERE
-            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+            LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
     ), TopSongs AS (
         SELECT
             se.artist,
@@ -70,10 +71,11 @@ const match = async function(req, res) {
 }
 
 const matchAlbum = async function(req, res) {
+  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
   connection.query(`
     WITH UserInputScores AS (
         SELECT
-            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            '${user_input_string}' AS user_string,
             SUM(Words.anger) AS anger_score,
             SUM(Words.anticipation) AS anticipation_score,
             SUM(Words.disgust) AS disgust_score,
@@ -87,7 +89,7 @@ const matchAlbum = async function(req, res) {
         FROM
             Words
         WHERE
-            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+            LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
     ), TopAlbums AS (
         SELECT
             ae.artist,
@@ -115,25 +117,20 @@ const matchAlbum = async function(req, res) {
     FROM TopAlbums;
   `, (err, data) => {
     if (err || data.length === 0) {
-      // if there is an error for some reason, or if the query is empty (this should not be possible)
-      // print the error message and return an empty object instead
       console.log(err);
       res.json({});
     } else {
-      // Here, we return results of the query as an object, keeping only relevant data
-      // being song_id and title which you will add. In this case, there is only one song
-      // so we just directly access the first element of the query results array (data)
-      // TODO (TASK 3): also return the song title in the response
       res.json(data);
     }
   });
 }
 
 const matchArtist = async function(req, res) {
+  const user_input_string = 'happy happy energy excited future love love';
   connection.query(`
     WITH UserInputScores AS (
         SELECT
-            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            '${user_input_string}' AS user_string,
             SUM(Words.anger) AS anger_score,
             SUM(Words.anticipation) AS anticipation_score,
             SUM(Words.disgust) AS disgust_score,
@@ -147,21 +144,21 @@ const matchArtist = async function(req, res) {
         FROM
             Words
         WHERE
-            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+            LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
     ), TopArtists AS (
         SELECT
             ae.artist,
             SQRT(
-                POWER(UserInputScores.anger_score - ae.total_anger_score, 2) +
-                POWER(UserInputScores.anticipation_score - ae.total_anticipation_score, 2) +
-                POWER(UserInputScores.disgust_score - ae.total_disgust_score, 2) +
-                POWER(UserInputScores.fear_score - ae.total_fear_score, 2) +
-                POWER(UserInputScores.joy_score - ae.total_joy_score, 2) +
-                POWER(UserInputScores.negative_score - ae.total_negative_score, 2) +
-                POWER(UserInputScores.positive_score - ae.total_positive_score, 2) +
-                POWER(UserInputScores.sadness_score - ae.total_sadness_score, 2) +
-                POWER(UserInputScores.surprise_score - ae.total_surprise_score, 2) +
-                POWER(UserInputScores.trust_score - ae.total_trust_score, 2)
+                POWER(UserInputScores.anger_score - ae.total_anger_score/1000, 2) +
+                POWER(UserInputScores.anticipation_score - ae.total_anticipation_score/1000, 2) +
+                POWER(UserInputScores.disgust_score - ae.total_disgust_score/1000, 2) +
+                POWER(UserInputScores.fear_score - ae.total_fear_score/1000, 2) +
+                POWER(UserInputScores.joy_score - ae.total_joy_score/1000, 2) +
+                POWER(UserInputScores.negative_score - ae.total_negative_score/1000, 2) +
+                POWER(UserInputScores.positive_score - ae.total_positive_score/1000, 2) +
+                POWER(UserInputScores.sadness_score - ae.total_sadness_score/1000, 2) +
+                POWER(UserInputScores.surprise_score - ae.total_surprise_score/1000, 2) +
+                POWER(UserInputScores.trust_score - ae.total_trust_score/1000, 2)
             ) AS distance
         FROM
             ArtistEmotionScores ae
@@ -183,10 +180,11 @@ const matchArtist = async function(req, res) {
 }
 
 const misMatch = async function(req, res) {
+  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
   connection.query(`
     WITH UserInputScores AS (
         SELECT
-            'depression depression depression depression suicide suicide i hate living' AS user_string,
+            '${user_input_string}' AS user_string,
             SUM(Words.anger) AS anger_score,
             SUM(Words.anticipation) AS anticipation_score,
             SUM(Words.disgust) AS disgust_score,
@@ -200,7 +198,7 @@ const misMatch = async function(req, res) {
         FROM
             Words
         WHERE
-            LOWER('depression depression depression depression suicide suicide i hate living') LIKE CONCAT('%', LOWER(Words.word), '%')
+            LOWER('${user_input_string}') LIKE CONCAT('%', LOWER(Words.word), '%')
     ), TopSongs AS (
         SELECT
             se.artist,

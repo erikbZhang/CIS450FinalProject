@@ -110,16 +110,16 @@ WITH UserInputScores AS (
     SELECT
         ae.artist,
         SQRT(
-            POWER(UserInputScores.anger_score - ae.total_anger_score, 2) +
-            POWER(UserInputScores.anticipation_score - ae.total_anticipation_score, 2) +
-            POWER(UserInputScores.disgust_score - ae.total_disgust_score, 2) +
-            POWER(UserInputScores.fear_score - ae.total_fear_score, 2) +
-            POWER(UserInputScores.joy_score - ae.total_joy_score, 2) +
-            POWER(UserInputScores.negative_score - ae.total_negative_score, 2) +
-            POWER(UserInputScores.positive_score - ae.total_positive_score, 2) +
-            POWER(UserInputScores.sadness_score - ae.total_sadness_score, 2) +
-            POWER(UserInputScores.surprise_score - ae.total_surprise_score, 2) +
-            POWER(UserInputScores.trust_score - ae.total_trust_score, 2)
+            POWER(UserInputScores.anger_score - ae.total_anger_score/1000, 2) +
+            POWER(UserInputScores.anticipation_score - ae.total_anticipation_score/1000, 2) +
+            POWER(UserInputScores.disgust_score - ae.total_disgust_score/1000, 2) +
+            POWER(UserInputScores.fear_score - ae.total_fear_score/1000, 2) +
+            POWER(UserInputScores.joy_score - ae.total_joy_score/1000, 2) +
+            POWER(UserInputScores.negative_score - ae.total_negative_score/1000, 2) +
+            POWER(UserInputScores.positive_score - ae.total_positive_score/1000, 2) +
+            POWER(UserInputScores.sadness_score - ae.total_sadness_score/1000, 2) +
+            POWER(UserInputScores.surprise_score - ae.total_surprise_score/1000, 2) +
+            POWER(UserInputScores.trust_score - ae.total_trust_score/1000, 2)
         ) AS distance
     FROM
         ArtistEmotionScores ae
