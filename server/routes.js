@@ -230,6 +230,7 @@ const matchArtist = async function(req, res) {
   });
 }
 
+//opposite day
 const misMatch = async function(req, res) {
   const user_input_string = 'fuck fuck kill myself hate living so depressed and anxious';
   connection.query(`
@@ -291,6 +292,7 @@ const misMatch = async function(req, res) {
   });
 }
 
+// take an emotion and gives a playlist
 // GET /emotionPlaylist/:emotion
 const emotionPlaylist = async function(req, res) {
   const { emotion } = req.params;
