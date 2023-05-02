@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 connection.connect((err) => err && console.log(err));
 
 const match = async function(req, res) {
-  const user_input_string = 'love love love i am so happy so excited so grateful';
+  const user_input_string = req.params.userString;
   connection.query(`
     WITH UserInputScores AS (
         SELECT
@@ -70,8 +70,8 @@ const match = async function(req, res) {
   });
 }
 
-const matchAlbum = async function(req, res) {
-  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
+const matchAlbum = async function(req, res) { 
+  const user_input_string = req.params.userString;
   connection.query(`
     WITH UserInputScores AS (
         SELECT
@@ -161,7 +161,7 @@ const matchAlbum = async function(req, res) {
 }
 
 const matchArtist = async function(req, res) {
-  const user_input_string = 'depression depression depression depression suicide suicide i hate living';
+  const user_input_string = req.params.userString;
   connection.query(`
   WITH UserInputScores AS (
     SELECT
@@ -232,7 +232,7 @@ const matchArtist = async function(req, res) {
 
 //opposite day
 const misMatch = async function(req, res) {
-  const user_input_string = 'fuck fuck kill myself hate living so depressed and anxious';
+  const user_input_string = req.params.userString;
   connection.query(`
     WITH UserInput AS (
         SELECT
@@ -296,6 +296,7 @@ const misMatch = async function(req, res) {
 // GET /emotionPlaylist/:emotion
 const emotionPlaylist = async function(req, res) {
   const { emotion } = req.params;
+  console.log(emotion);
   connection.query(`
     SELECT s.song_id, s.title, s.artist, s.album, s.year, s.date, ss.${emotion}_score
     FROM Songs s
@@ -386,10 +387,11 @@ const emotionAlbums = async function(req, res) {
 const songEmotionScore = async function(req, res) {
   const { song_title } = req.params;
   connection.query(`
-    SELECT artist, title, anger_score, anticipation_score, disgust_score, fear_score, joy_score,
-          negative_score, positive_score, sadness_score, surprise_score, trust_score
-    FROM SongScores
-    WHERE title='${song_title}'
+    SELECT a.album, s.artist, s.title, s.anger_score, s.anticipation_score, s.disgust_score, s.fear_score, s.joy_score,
+          s.negative_score, s.positive_score, s.sadness_score, s.surprise_score, s.trust_score
+    FROM SongScores s
+    JOIN Songs a ON s.title = a.title
+    WHERE s.title='${song_title}'
   `, (err, data) => {
     if (err || data.length === 0) {
       console.log(err);

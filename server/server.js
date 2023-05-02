@@ -9,10 +9,10 @@ app.use(cors({
 }));
 
 
-app.get('/match', routes.match);
-app.get('/matchAlbum', routes.matchAlbum);
-app.get('/matchArtist', routes.matchArtist);
-app.get('/misMatch', routes.misMatch);
+app.get('/match/:userString', routes.match);
+app.get('/matchAlbum/:userString', routes.matchAlbum);
+app.get('/matchArtist/:userString', routes.matchArtist);
+app.get('/misMatch/:userString', routes.misMatch);
 app.get('/emotionPlaylist/:emotion', routes.emotionPlaylist);
 app.get('/emotionArtists/:emotion', routes.emotionArtists);
 app.get('/emotionAlbums/:emotion', routes.emotionAlbums);
