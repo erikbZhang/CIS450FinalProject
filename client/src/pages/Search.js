@@ -4,6 +4,7 @@ import Typer from '../components/Typer';
 import Nav from '../components/Nav';
 import React, { useState } from 'react';
 
+
 const options = [
   '', 'Playlist', 'Album', 'Artist'
 ];

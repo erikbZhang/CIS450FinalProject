@@ -7,7 +7,7 @@ import fetchMusicBrainzID from '../utils/fetchMusicBrainzID';
 import fetchAlbumImage from '../utils/fetchAlbumImage';
 
 
-const SearchOutput = () => {
+const AlbumsOutputSearch = () => {
   const history = useNavigate();
   // const [albums, setAlbums] = useState([]);
   // const userString = userInput.value;
@@ -82,4 +82,4 @@ const SearchOutput = () => {
   );
 };
 
-export default SearchOutput;
+export default AlbumsOutputSearch;

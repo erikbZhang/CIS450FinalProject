@@ -1,17 +1,17 @@
-// src/pages/ArtistsOutput.js
+// src/pages/AlbumsOutputChoose.js
 import { useEffect, useState } from 'react';
-import { userInput } from './globals';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { userInputEmotion } from './globals';
 
 const config = require('../config.json');
 
-const AlbumsOutput = () => {
+const AlbumsOutputChoose = () => {
   const history = useNavigate();
   const [albums, setAlbums] = useState([]);
-  const userString = userInput.value;
+  const emotion = userInputEmotion.emotion;
   useEffect(() => {
-    fetch(`http://${config.server_host}:${config.server_port}/matchAlbum/${userString}`)
+    fetch(`http://${config.server_host}:${config.server_port}/emotionAlbums/${emotion}`)
     .then(res => res.json())
     .then(resJson => setAlbums(resJson));
   })
@@ -45,4 +45,4 @@ const AlbumsOutput = () => {
   );
 };
 
-export default AlbumsOutput;
+export default AlbumsOutputChoose;

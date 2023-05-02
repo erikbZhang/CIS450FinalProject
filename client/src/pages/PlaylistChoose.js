@@ -1,29 +1,18 @@
-// src/pages/Playlist.js
+// src/pages/PlaylistChoose.js
 import { useEffect, useState } from 'react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { userInput, userOpposite } from './globals';
+import { userInput, userInputEmotion } from './globals';
 
 const config = require('../config.json');
 
-const Playlist = () => {
-
+const PlaylistChoose = () => {
   const [songs, setSongs] = useState([]);
-  const userString = userInput.value;
+  const emotion = userInputEmotion.emotion;
   useEffect(() => {
-    if (userOpposite.opposite) {
-      console.log("misMatch being run");
-      fetch(`http://${config.server_host}:${config.server_port}/misMatch/${userString}`)
-      .then(res => res.json())
-      .then(resJson => setSongs(resJson));
-    }
-    else {
-      console.log("normal match being run");
-      fetch(`http://${config.server_host}:${config.server_port}/match/${userString}`)
-      .then(res => res.json())
-      .then(resJson => setSongs(resJson));
-    }
-    userOpposite.opposite = false;
+    fetch(`http://${config.server_host}:${config.server_port}/emotionPlaylist/${emotion}`)
+    .then(res => res.json())
+    .then(resJson => setSongs(resJson));
   })
 
 
@@ -58,4 +47,4 @@ const Playlist = () => {
   );
 };
 
-export default Playlist;
+export default PlaylistChoose;

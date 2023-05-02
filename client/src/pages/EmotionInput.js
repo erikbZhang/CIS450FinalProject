@@ -1,3 +1,4 @@
+import { userInput, userOpposite } from './globals';
 
 import { useNavigate } from 'react-router-dom';
 import Typer from '../components/Typer';
@@ -15,6 +16,9 @@ const EmotionInput = () => {
   const [opposites, setOpposites] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    userOpposite.opposite = opposites;
+    userInput.value = e.target.elements.input.value;
 
     switch (selectedOption) {
       case 'playlist':
@@ -58,6 +62,7 @@ const EmotionInput = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
+            name='input'
             className="bg-white border-2 border-green-200 rounded p-2 w-2/3"
             placeholder="Enter your emotion"
             autoFocus
@@ -69,18 +74,20 @@ const EmotionInput = () => {
             Submit
           </button>
         </form>
-        <div className="absolute top-20 right-0 p-2">
-          <label htmlFor="opposites" className="inline-flex items-center cursor-pointer">
-            <input
-              id="opposites"
-              type="checkbox"
-              className="form-checkbox h-4 w-4 text-green-600"
-              checked={opposites}
-              onChange={handleCheckboxChange}
-            />
-            <span className="ml-2">Suggest the Opposite of your Feelings!</span>
-          </label>
-        </div>
+        {selectedOption === 'playlist' && (
+          <div className="absolute top-20 right-0 p-2">
+            <label htmlFor="opposites" className="inline-flex items-center cursor-pointer">
+              <input
+                id="opposites"
+                type="checkbox"
+                className="form-checkbox h-4 w-4 text-green-600"
+                checked={opposites}
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2">Suggest the Opposite of your Feelings!</span>
+            </label>
+          </div>
+        )}
       </div>
       
     </div>

@@ -9,6 +9,12 @@ import Search from './pages/Search';
 import Choose from './pages/Choose';
 import AlbumsOutput from './pages/AlbumsOutput';
 import SearchOutput from './pages/SearchOutput';
+import PlaylistChoose from './pages/PlaylistChoose';
+import AlbumsOutputChoose from './pages/AlbumsOutputChoose';
+import ArtistOutputChoose from './pages/ArtistsOutputChoose';
+import SongSearch from './pages/SongOutputSearch';
+import AlbumsOutputSearch from './pages/AlbumsOutputSearch';
+import ArtistsOutputSearch from './pages/ArtistsOutputSearch';
 const App = () => {
   return (
     <Router>
@@ -20,6 +26,12 @@ const App = () => {
         <Route path="/Search" element={<Search />} />
         <Route path="/AlbumsOutput" element={<AlbumsOutput />} />
         <Route path="/SearchOutput" element={<SearchOutput />} />
+        <Route path="/AlbumsOutputChoose" element={<AlbumsOutputChoose />} />
+        <Route path="/ArtistOutputChoose" element={<ArtistOutputChoose />} />
+        <Route path="/PlaylistChoose" element={<PlaylistChoose />} />
+        <Route path="/SongOutputSearch" element={<SongOutputSearch />} />
+        <Route path="/ArtistsOutputSearch" element={<ArtistsOutputSearch />} />
+        <Route path="/AlbumsOutputSearch" element={<AlbumsOutputSearch />} />
       </Routes>
     </Router>
   );
