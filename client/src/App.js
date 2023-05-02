@@ -12,7 +12,7 @@ import SearchOutput from './pages/SearchOutput';
 import PlaylistChoose from './pages/PlaylistChoose';
 import AlbumsOutputChoose from './pages/AlbumsOutputChoose';
 import ArtistOutputChoose from './pages/ArtistsOutputChoose';
-import SongSearch from './pages/SongOutputSearch';
+import SongOutputSearch from './pages/SongOutputSearch';
 import AlbumsOutputSearch from './pages/AlbumsOutputSearch';
 import ArtistsOutputSearch from './pages/ArtistsOutputSearch';
 const App = () => {
