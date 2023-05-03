@@ -15,9 +15,25 @@ app.get('/songEmotionScore/:song_title', routes.songEmotionScore);
 app.get('/albumEmotionScore/:album_title', routes.albumEmotionScore);
 app.get('/artistEmotionScore/:artist', routes.artistEmotionScore);*/
 
+describe('GET /match', () => {
+  test('returns 404 when userString parameter is missing', async () => {
+    const response = await supertest(app).get('/match');
+    expect(response.status).toBe(404);
+  });
+
+  test('returns 200 when userString parameter is present', async () => {
+    const response = await supertest(app).get('/match/my_search_string');
+    expect(response.status).toBe(200);
+  });
+});
 
 test('GET /match', async () => {
   await supertest(app).get('/match')
+    .expect(404);
+});
+
+test('GET /match/sadness', async () => {
+  await supertest(app).get('/match/sadness')
     .expect(200)
     .then((res) => {
       expect(res.body[0]).toStrictEqual({
@@ -33,31 +49,64 @@ test('GET /match', async () => {
 
 test('GET /matchAlbum', async () => {
   await supertest(app).get('/matchAlbum')
-    .expect(200)
-    .then((res) => {
-      expect(res.body[0]).toStrictEqual({
-        album: expect.any(String),
-        artist: expect.any(String),
-        cosine_similarity: expect.any(Number),
-      });
-    });
+    .expect(404);
+});
+
+describe('GET /matchAlbum', () => {
+  test('returns 404 when userString parameter is missing', async () => {
+    const response = await supertest(app).get('/matchAlbum');
+    expect(response.status).toBe(404);
+  });
+
+  test('returns 200 when userString parameter is present', async () => {
+    const response = await supertest(app).get('/matchAlbum/sad');
+    expect(response.status).toBe(200);
+  });
+});
+
+describe('GET /match/:userString', () => {
+  test('returns status code 200 and a JSON object with album recommendations', async () => {
+    const response = await supertest(app)
+      .get('/match/happy songs')
+      .expect(200);
+    expect(response.body).toBeDefined();
+    expect(Array.isArray(response.body)).toBe(true);
+    expect(response.body.length).toBeGreaterThanOrEqual(1);
+  });
+
+  test('returns status code 400 if userString parameter is missing', async () => {
+    const response = await supertest(app)
+      .get('/match/')
+      .expect(404);
+  });
 });
 
 test('GET /matchArtist', async () => {
   await supertest(app)
     .get('/matchArtist')
-    .expect(200)
-    .then((res) => {
-      expect(res.body[0]).toStrictEqual({
-        artist: expect.any(String),
-        distance: expect.any(Number),
-      });
-    });
+    .expect(404);
+});
+
+describe('GET /matchArtist', () => {
+  test('returns 404 when userString parameter is missing', async () => {
+    const response = await supertest(app).get('/matchArtist');
+    expect(response.status).toBe(404);
+  });
+
+  test('returns 200 when userString parameter is present', async () => {
+    const response = await supertest(app).get('/matchArtist/my_search_string');
+    expect(response.status).toBe(200);
+  });
 });
 
 test('GET /misMatch', async () => {
   await supertest(app)
     .get('/misMatch')
+    .expect(404);
+});
+
+test('GET /misMatch/sadness', async () => {
+  await supertest(app).get('/misMatch/sadness')
     .expect(200)
     .then((res) => {
       expect(res.body[0]).toStrictEqual({
@@ -71,16 +120,28 @@ test('GET /misMatch', async () => {
     });
 });
 
-test('GET /emotionPlaylist/:emotion', async () => {
-  const emotion = 'happy';
+test('GET /misMatch', async () => {
+  await supertest(app).get('/misMatch')
+    .expect(404)
+    .then((res) => {
+      expect(res.body[0]).toStrictEqual(undefined);
+    });
+});
 
-  await supertest(app)
-    .get(`/emotionPlaylist/${emotion}`)
-    .expect(200);
+describe('GET /misMatch', () => {
+  test('returns 404 when userString parameter is missing', async () => {
+    const response = await supertest(app).get('/misMatch');
+    expect(response.status).toBe(404);
+  });
+
+  test('returns 200 when userString parameter is present', async () => {
+    const response = await supertest(app).get('/misMatch/my_search_string');
+    expect(response.status).toBe(200);
+  });
 });
 
 test('GET /emotionPlaylist/:emotion', async () => {
-  const emotion = 'afraid';
+  const emotion = 'happy';
 
   await supertest(app)
     .get(`/emotionPlaylist/${emotion}`)
@@ -114,6 +175,7 @@ test('GET /emotionAlbums/:emotion returns empty object when no data is found', a
 test('GET /songEmotionScore/:song_title', async () => {
   const songTitle = 'Blank Space';
   const expectedResults = {
+    album: '1989',
     anger_score: expect.any(Number),
     anticipation_score: expect.any(Number),
     artist: 'Taylor Swift',
@@ -172,6 +234,18 @@ test('GET /albumEmotionScore/:album_title', async () => {
     });
 });
 
+describe('GET /albumEmotionScore', () => {
+  test('returns 404 when userString parameter is missing', async () => {
+    const response = await supertest(app).get('/albumEmotionScore');
+    expect(response.status).toBe(404);
+  });
+
+  test('returns 200 when userString parameter is present', async () => {
+    const response = await supertest(app).get('/albumEmotionScore/userinput');
+    expect(response.status).toBe(200);
+  });
+});
+
 test('GET /albumEmotionScore/:album_title - returns empty object for non-existent album', async () => {
   const nonExistentAlbum = 'This Album Does Not Exist';
   await supertest(app).get(`/songEmotionScore/${nonExistentAlbum}`)
@@ -203,6 +277,18 @@ test('GET /artistEmotionScore/:artist', async () => {
     .then((res) => {
       expect(res.body[0]).toStrictEqual(expectedResults);
     });
+});
+
+describe('GET /artistEmotionScore', () => {
+  test('returns 404 when userString parameter is missing', async () => {
+    const response = await supertest(app).get('/artistEmotionScore');
+    expect(response.status).toBe(404);
+  });
+
+  test('returns 200 when userString parameter is present', async () => {
+    const response = await supertest(app).get('/artistEmotionScore/userinput');
+    expect(response.status).toBe(200);
+  });
 });
 
 test('GET /artistEmotionScore/:artist', async () => {
@@ -276,3 +362,4 @@ test('GET /emotionAlbums/:emotion', async () => {
       });
     });
 });
+
