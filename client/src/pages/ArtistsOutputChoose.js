@@ -23,37 +23,40 @@ import postm from '../images/postm.jpg';
 import rihanna from '../images/rihanna.jpg';
 import selenag from '../images/selenag.jpg';
 import charliep from '../images/charliep.jpg';
+import gaga from '../images/gaga.jpg';
 
 const config = require('../config.json');
 
 
 const ArtistsOutputChoose = () => {
   const artistImages = {
-      'Taylor Swift': taylors,
-      'Ed Sheeran': eds,
-      'Justin Bieber': justinb,
-      'Ariana Grande': arianag,
-      'Beyoncé': beyonce,
-      'Billie Eilish': biliee,
-      'BTS': bts,
-      'Cardi B': cardib,
-      'Coldplay': coldplay,
-      'Charlie Puth': charliep,
-      'Drake': drake,
-      'Dua Lipa': dual,
-      'Eminem': eminem,
-      'Katy Perry': katyp,
-      'Khalid': khalid,
-      'Maroon 5': maroon5,
-      'Nicki Minaj': nickim,
-      'Post Malone': postm,
-      'Rihanna': rihanna,
-      'Selena Gomez': selenag,
-    };
+    'Taylor Swift': taylors,
+    'Ed Sheeran': eds,
+    'Justin Bieber': justinb,
+    'Ariana Grande': arianag,
+    'Beyoncé': beyonce,
+    'Billie Eilish': biliee,
+    'BTS (방탄소년단)': bts,
+    'Cardi B': cardib,
+    'Coldplay': coldplay,
+    'Charlie Puth': charliep,
+    'Drake': drake,
+    'Dua Lipa': dual,
+    'Eminem': eminem,
+    'Katy Perry': katyp,
+    'Khalid': khalid,
+    'Maroon 5': maroon5,
+    'Nicki Minaj': nickim,
+    'Post Malone': postm,
+    'Rihanna': rihanna,
+    'Selena Gomez': selenag,
+    'Lady Gaga': gaga,
+  };
   const history = useNavigate();
   const [imgSrc, setImgSrc] = useState(taylors);
   const [artists, setArtists] = useState([]);
   const emotion = userInputEmotion.emotion;
+  console.log(emotion);
   useEffect(() => {
     fetch(`http://${config.server_host}:${config.server_port}/emotionArtists/${emotion}`)
       .then((res) => res.json())
@@ -77,14 +80,14 @@ const ArtistsOutputChoose = () => {
         </button>
       </header>
       <div className="text-center">
-        <h2 className="text-4xl mb-8">Here's some recommended albums based on your emotion!</h2>
+        <h2 className="text-4xl mb-8">Here's some recommended artists based on your emotion!</h2>
         <ul className="space-y-4">
           {artists.map((artist, index) => (
             <li
               key={index}
               className="flex items-center space-x-4 bg-white p-4 rounded shadow-lg"
             >
-              <img src={imgSrc[index]} alt={artist.artist} className="w-16 h-16 rounded" />
+              <img src={imgSrc[index]} alt="Artist Image Here" className="w-16 h-16 rounded" />
               <span className="text-xl">{artist.artist}</span>
             </li>
           ))}

@@ -19,6 +19,7 @@ import postm from '../images/postm.jpg';
 import rihanna from '../images/rihanna.jpg';
 import selenag from '../images/selenag.jpg';
 import charliep from '../images/charliep.jpg';
+import gaga from '../images/gaga.jpg';
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -35,7 +36,7 @@ const ArtistsOutput = () => {
     'Ariana Grande': arianag,
     'Beyoncé': beyonce,
     'Billie Eilish': biliee,
-    'BTS': bts,
+    'BTS (방탄소년단)': bts,
     'Cardi B': cardib,
     'Coldplay': coldplay,
     'Charlie Puth': charliep,
@@ -49,6 +50,7 @@ const ArtistsOutput = () => {
     'Post Malone': postm,
     'Rihanna': rihanna,
     'Selena Gomez': selenag,
+    'Lady Gaga': gaga,
   };
   const history = useNavigate();
   const [imgSrc, setImgSrc] = useState(taylors);
@@ -84,7 +86,7 @@ const ArtistsOutput = () => {
                 key={index}
                 className="flex items-center space-x-4 bg-white p-4 rounded shadow-lg"
               >
-                <img src={imgSrc[index]} alt={artist.artist} className="w-16 h-16 rounded" />
+                <img src={imgSrc[index]} alt="Artist Image Here" className="w-16 h-16 rounded" />
                 <span className="text-xl">{artist.artist}</span>
               </li>
             ))}

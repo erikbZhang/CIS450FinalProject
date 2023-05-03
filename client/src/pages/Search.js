@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Typer from '../components/Typer';
 import Nav from '../components/Nav';
 import React, { useState } from 'react';
+import { userInput } from './globals';
 
 
 const options = [
@@ -16,21 +17,22 @@ const EmotionInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history('/SearchOutput');
-    // switch (selectedOption) {
-    //   //will leave this design choice to whoever does backend - can either redirect all to searchoutput, or make a new page for each case. think the first is more efficient
-    //   // case 'playlist':
-    //   //   history('/playlist');
-    //   //   break;
-    //   // case 'album':
-    //   //   history('/AlbumsOutput');
-    //   //   break;
-    //   // case 'artist':
-    //   //   history('/ArtistsOutput');
-    //   //   break;
-    //   default:
-    //     alert('Please select an option from the dropdown.');
-    // }
+    userInput.value = e.target.elements.input.value;
+    
+    switch (selectedOption) {
+
+      case 'playlist':
+        history('/SongOutputSearch');
+        break;
+      case 'album':
+        history('/AlbumsOutputSearch');
+        break;
+      case 'artist':
+        history('/ArtistsOutputSearch');
+        break;
+      default:
+        alert('Please select an option from the dropdown.');
+    }
   };
 
   const handleDropdownChange = (e) => {
@@ -57,6 +59,7 @@ const EmotionInput = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
+            name="input"
             className="bg-white border-2 border-green-200 rounded p-2 w-2/3"
             placeholder="Enter the song, album, or artist you want to analyze."
             autoFocus

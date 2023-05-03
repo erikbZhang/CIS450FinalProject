@@ -8,7 +8,6 @@ import ArtistsOutput from './pages/ArtistsOutput';
 import Search from './pages/Search';
 import Choose from './pages/Choose';
 import AlbumsOutput from './pages/AlbumsOutput';
-import SearchOutput from './pages/SearchOutput';
 import PlaylistChoose from './pages/PlaylistChoose';
 import AlbumsOutputChoose from './pages/AlbumsOutputChoose';
 import ArtistOutputChoose from './pages/ArtistsOutputChoose';
@@ -25,9 +24,8 @@ const App = () => {
         <Route path="/Choose" element={<Choose />} />
         <Route path="/Search" element={<Search />} />
         <Route path="/AlbumsOutput" element={<AlbumsOutput />} />
-        <Route path="/SearchOutput" element={<SearchOutput />} />
         <Route path="/AlbumsOutputChoose" element={<AlbumsOutputChoose />} />
-        <Route path="/ArtistOutputChoose" element={<ArtistOutputChoose />} />
+        <Route path="/ArtistsOutputChoose" element={<ArtistOutputChoose />} />
         <Route path="/PlaylistChoose" element={<PlaylistChoose />} />
         <Route path="/SongOutputSearch" element={<SongOutputSearch />} />
         <Route path="/ArtistsOutputSearch" element={<ArtistsOutputSearch />} />

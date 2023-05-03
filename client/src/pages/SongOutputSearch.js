@@ -2,40 +2,46 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { userInput } from './globals';
 
 import fetchMusicBrainzID from '../utils/fetchMusicBrainzID';
 import fetchAlbumImage from '../utils/fetchAlbumImage';
 
+const config = require('../config.json');
+
 
 const SongOutputSearch = () => {
+  const [anger, setAnger] = useState(0);
+  const [anticipation, setAnticipation] = useState(0);
+  const [disgust, setDisgust] = useState(0);
+  const [fear, setFear] = useState(0);
+  const [happiness, setHappiness] = useState(0);
+
+  const [negativity, setNegativity] = useState(0);
+  const [positivity, setPositivity] = useState(0);
+  const [sadness, setSadness] = useState(0);
+  const [surprise, setSurprise] = useState(0);
+  const [trust, setTrust] = useState(0);
+  const [artist, setArtist] = useState('');
+  const [album1, setAlbum] = useState('');
   const history = useNavigate();
-  // const [albums, setAlbums] = useState([]);
-  // const userString = userInput.value;
-  // useEffect(() => {
-  //   fetch(`http://${config.server_host}:${config.server_port}/matchAlbums/${userString}`)
-  //   .then(res => res.json())
-  //   .then(resJson => setAlbums(resJson));
-  // })
   const emotions = [
-    { label: 'Anger', value: 25 },
-    { label: 'Anticipation', value: 50 },
-    { label: 'Disgust', value: 75 },
-    { label: 'Fear', value: 30 },
-    { label: 'Happiness', value: 60 },
-    { label: 'Negativity', value: 40 },
-    { label: 'Positivity', value: 80 },
-    { label: 'Sadness', value: 20 },
-    { label: 'Surprise', value: 55 },
-    { label: 'Trust', value: 90 },
+    { label: 'Anger', value: anger },
+    { label: 'Anticipation', value: anticipation },
+    { label: 'Disgust', value: disgust },
+    { label: 'Fear', value: fear },
+    { label: 'Happiness', value: happiness },
+    { label: 'Negativity', value: negativity },
+    { label: 'Positivity', value: positivity },
+    { label: 'Sadness', value: sadness },
+    { label: 'Surprise', value: surprise },
+    { label: 'Trust', value: trust },
   ];
   const [albumImage, setAlbumImage] = useState('');
 
-  const artist = "Taylor Swift";
-  const album = "1989";
-
   useEffect(() => {
     const fetchImage = async () => {
-      const musicBrainzID = await fetchMusicBrainzID(artist, album);
+      const musicBrainzID = await fetchMusicBrainzID(artist, album1);
       if (musicBrainzID) {
         const imageUrl = await fetchAlbumImage(musicBrainzID);
         setAlbumImage(imageUrl);
@@ -43,7 +49,36 @@ const SongOutputSearch = () => {
     };
 
     fetchImage();
-  }, [artist, album]);
+  }, [artist, album1]);
+  const song = userInput.value;
+
+  useEffect(() => {
+    fetch(`http://${config.server_host}:${config.server_port}/songEmotionScore/${song}`)
+    .then(res => res.json())
+    .then(resJson => {
+      console.log(resJson);
+
+      if(Object.keys(resJson).length === 0) {
+        window.alert('Song does not exist');
+        return;
+      }
+      setAnger(resJson[0].anger_score);
+      setAnticipation(resJson[0].anticipation_score);
+      setDisgust(resJson[0].disgust_score);
+      setFear(resJson[0].fear_score);
+      setNegativity(resJson[0].negativity_score);
+      setPositivity(resJson[0].positivity_score);
+      setSadness(resJson[0].sadness_score);
+      setSurprise(resJson[0].surprise_score);
+      setTrust(resJson[0].trust_score);
+      console.log(anger);
+      setAlbum(resJson[0].album);
+      setArtist(resJson[0].artist);
+      // asetAnger(resJson[0].avg_anger_score);
+      // console.log(anger);
+    });
+  });
+
   const goBack = () => {
     history('/');
   };
@@ -69,8 +104,8 @@ const SongOutputSearch = () => {
                   {emotion.label}
                 </span>
                 <div
-                  className="bg-green-200 h-4 w-full absolute left-32"
-                  style={{ width: `${emotion.value}%` }}
+                  className="bg-green-200 h-4"
+                  style={{ width: `${emotion.value * 20}px` }}
                 ></div>
                 <br></br>
               </li>
