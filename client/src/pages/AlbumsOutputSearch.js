@@ -74,6 +74,7 @@ const AlbumsOutputSearch = () => {
       setFear(resJson[0].avg_fear_score);
       setNegativity(resJson[0].avg_negativity_score);
       setPositivity(resJson[0].avg_positivity_score);
+      setHappiness(resJson[0].avg_happiness_score);
       setSadness(resJson[0].avg_sadness_score);
       setSurprise(resJson[0].avg_surprise_score);
       setTrust(resJson[0].avg_trust_score);

@@ -69,6 +69,7 @@ const SongOutputSearch = () => {
       setNegativity(resJson[0].negativity_score);
       setPositivity(resJson[0].positivity_score);
       setSadness(resJson[0].sadness_score);
+      setHappiness(resJson[0].avg_happiness_score);
       setSurprise(resJson[0].surprise_score);
       setTrust(resJson[0].trust_score);
       console.log(anger);
